@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>奇点科普科幻协会</title>
   
-  <subtitle>一个可爱而现代的 Hexo 主题</subtitle>
+  <subtitle>探索科学与幻想的边界</subtitle>
   <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/atom.xml" rel="self"/>
   
   <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/"/>
-  <updated>2025-07-22T14:11:17.114Z</updated>
+  <updated>2025-07-22T15:28:11.655Z</updated>
   <id>https://qidiankepukehuan.github.io/qidiankepukehuan/</id>
   
   <author>
-    <name>All contributors</name>
+    <name>奇点科普科幻协会</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/"/>
     <id>https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/</id>
     <published>2018-05-06T09:03:12.000Z</published>
-    <updated>2025-07-22T14:11:17.114Z</updated>
+    <updated>2025-07-22T15:28:11.655Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎使用 <code>Kratos : Rebirth</code> 这个我们精心打造的 Hexo 主题！希望能在接下来的旅途中与您相伴，共同创造出更多难以忘怀的美好体验。</p>]]></content>
     
