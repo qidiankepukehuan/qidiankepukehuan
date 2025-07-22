@@ -3,11 +3,11 @@
   <title>奇点科普科幻协会</title>
   
   <subtitle>探索科学与幻想的边界</subtitle>
-  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/atom.xml" rel="self"/>
+  <link href="https://qidiankepukehuan.github.io/atom.xml" rel="self"/>
   
-  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/"/>
+  <link href="https://qidiankepukehuan.github.io/"/>
   <updated>2025-07-22T15:28:11.655Z</updated>
-  <id>https://qidiankepukehuan.github.io/qidiankepukehuan/</id>
+  <id>https://qidiankepukehuan.github.io/</id>
   
   <author>
     <name>奇点科普科幻协会</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>你好，世界！</title>
-    <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/"/>
-    <id>https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/</id>
+    <link href="https://qidiankepukehuan.github.io/posts/hello-world/"/>
+    <id>https://qidiankepukehuan.github.io/posts/hello-world/</id>
     <published>2018-05-06T09:03:12.000Z</published>
     <updated>2025-07-22T15:28:11.655Z</updated>
     
@@ -34,10 +34,10 @@
     
     
     
-    <category term="全新体验" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/categories/%E5%85%A8%E6%96%B0%E4%BD%93%E9%AA%8C/"/>
+    <category term="全新体验" scheme="https://qidiankepukehuan.github.io/categories/%E5%85%A8%E6%96%B0%E4%BD%93%E9%AA%8C/"/>
     
     
-    <category term="欢迎" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/tags/%E6%AC%A2%E8%BF%8E/"/>
+    <category term="欢迎" scheme="https://qidiankepukehuan.github.io/tags/%E6%AC%A2%E8%BF%8E/"/>
     
   </entry>
   
