@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>奇点科普科幻协会</title>
+  
+  <subtitle>一个可爱而现代的 Hexo 主题</subtitle>
+  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/atom.xml" rel="self"/>
+  
+  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/"/>
+  <updated>2025-07-22T14:11:17.114Z</updated>
+  <id>https://qidiankepukehuan.github.io/qidiankepukehuan/</id>
+  
+  <author>
+    <name>All contributors</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你好，世界！</title>
+    <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/"/>
+    <id>https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/</id>
+    <published>2018-05-06T09:03:12.000Z</published>
+    <updated>2025-07-22T14:11:17.114Z</updated>
+    
+    <content type="html"><![CDATA[<p>欢迎使用 <code>Kratos : Rebirth</code> 这个我们精心打造的 Hexo 主题！希望能在接下来的旅途中与您相伴，共同创造出更多难以忘怀的美好体验。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;欢迎使用 &lt;code&gt;Kratos : Rebirth&lt;/code&gt; 这个我们精心打造的 Hexo 主题！希望能在接下来的旅途中与您相伴，共同创造出更多难以忘怀的美好体验。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="全新体验" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/categories/%E5%85%A8%E6%96%B0%E4%BD%93%E9%AA%8C/"/>
+    
+    
+    <category term="欢迎" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/tags/%E6%AC%A2%E8%BF%8E/"/>
+    
+  </entry>
+  
+</feed>
