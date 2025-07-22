@@ -3,11 +3,11 @@
   <title>奇点科普科幻协会</title>
   
   <subtitle>探索科学与幻想的边界</subtitle>
-  <link href="https://qidiankepukehuan.github.io/atom.xml" rel="self"/>
+  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/atom.xml" rel="self"/>
   
-  <link href="https://qidiankepukehuan.github.io/"/>
+  <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/"/>
   <updated>2025-07-22T16:03:58.319Z</updated>
-  <id>https://qidiankepukehuan.github.io/</id>
+  <id>https://qidiankepukehuan.github.io/qidiankepukehuan/</id>
   
   <author>
     <name>奇点科普科幻协会</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>创社会长寄语</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%88%9B%E7%A4%BE%E4%BC%9A%E9%95%BF%E5%AF%84%E8%AF%AD/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%88%9B%E7%A4%BE%E4%BC%9A%E9%95%BF%E5%AF%84%E8%AF%AD/</id>
+    <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/posts/%E5%88%9B%E7%A4%BE%E4%BC%9A%E9%95%BF%E5%AF%84%E8%AF%AD/"/>
+    <id>https://qidiankepukehuan.github.io/qidiankepukehuan/posts/%E5%88%9B%E7%A4%BE%E4%BC%9A%E9%95%BF%E5%AF%84%E8%AF%AD/</id>
     <published>2025-04-27T16:00:00.000Z</published>
     <updated>2025-07-22T16:03:58.319Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>你好，世界！</title>
-    <link href="https://qidiankepukehuan.github.io/posts/hello-world/"/>
-    <id>https://qidiankepukehuan.github.io/posts/hello-world/</id>
+    <link href="https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/"/>
+    <id>https://qidiankepukehuan.github.io/qidiankepukehuan/posts/hello-world/</id>
     <published>2018-05-06T09:03:12.000Z</published>
     <updated>2025-07-22T15:28:11.655Z</updated>
     
@@ -59,10 +59,10 @@
     
     
     
-    <category term="全新体验" scheme="https://qidiankepukehuan.github.io/categories/%E5%85%A8%E6%96%B0%E4%BD%93%E9%AA%8C/"/>
+    <category term="全新体验" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/categories/%E5%85%A8%E6%96%B0%E4%BD%93%E9%AA%8C/"/>
     
     
-    <category term="欢迎" scheme="https://qidiankepukehuan.github.io/tags/%E6%AC%A2%E8%BF%8E/"/>
+    <category term="欢迎" scheme="https://qidiankepukehuan.github.io/qidiankepukehuan/tags/%E6%AC%A2%E8%BF%8E/"/>
     
   </entry>
   
