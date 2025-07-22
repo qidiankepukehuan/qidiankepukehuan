@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Node.js env
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'latest'
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+        run_install: false
+
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Install Hexo environment
+      run: pnpm install
+
+    - name: Hexo build site
+      run: npx hexo generate --force
+
+    - name: Upload artifacts for pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+
+  deploy:
+    needs: build
+    if: startsWith(github.event.ref, 'refs/heads/')
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
