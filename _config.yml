@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'Kratos : Rebirth'
+title: '奇点科普科幻协会'
 subtitle: '一个可爱而现代的 Hexo 主题'
 description: '欢迎使用这个主题，希望能给您带来美好的体验。'
 keywords: 
@@ -16,7 +16,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://krt.moe
+url: https://qidiankepukehuan.github.io/qidiankepukehuan/
 permalink: posts/:title/
 permalink_defaults:
 pretty_urls:
@@ -121,4 +121,8 @@ sitemap:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo:
+    github: git@github.com:qidiankepukehuan/qidiankepukehuan.git
+  branch: gh-pages  # GitHub Pages专用分支
+  message: "站点更新: {{ now('YYYY-MM-DD HH:mm:ss') }}"
