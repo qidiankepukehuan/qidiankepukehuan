@@ -3,20 +3,20 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '奇点科普科幻协会'
-subtitle: '一个可爱而现代的 Hexo 主题'
-description: '欢迎使用这个主题，希望能给您带来美好的体验。'
-keywords: 
-- hexo
-- theme
-- kratos-rebirth
-author: All contributors
-language: zh
-timezone: ''
+title: 奇点科普科幻协会
+subtitle: '探索科学与幻想的边界'
+description: '奇点科普科幻协会官方博客，分享科学知识、科幻作品与创作心得'
+keywords:
+- 科普
+- 科幻
+- 社团
+author: 奇点科普科幻协会
+language: zh-CN  # 修正语言代码
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://qidiankepukehuan.github.io/qidiankepukehuan/
+url: https://qidiankepukehuan.github.io/qidiankepukehuan
 permalink: posts/:title/
 permalink_defaults:
 pretty_urls:

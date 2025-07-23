@@ -9,8 +9,8 @@ search:
 
 # 图片配置
 image:
-  favicon: "/assets/favicon.png" # 站点图标
-  avatar: "/assets/logo.webp" # 个人信息挂件上的头像
+  favicon: "/qidiankepukehuan/assets/favicon.png" # 站点图标
+  avatar: "/qidiankepukehuan/assets/logo.webp" # 个人信息挂件上的头像
   banner:
     light: "https://dev.krt.moe/demo-assets/banner.webp"
     dark: "https://dev.krt.moe/demo-assets/banner_dark.webp"
@@ -24,18 +24,15 @@ nav:
     - label: 首页
       icon: home
       url: /
-    - label: 档案馆
+    - label: 档案
       icon: file
       url: /archives/
-    - label: 链接
+    - label: 友链
+      url: /frinds-links/
       icon: link
-      submenu:
-        - label: 代码仓库
-          icon: code
-          url: https://github.com/Candinya/Kratos-Rebirth
-        - label: 项目文档
-          icon: book
-          url: https://wiki.krt.moe
+    - label: 搜索
+      url: /search/
+      icon: search
 
 # Footer 页脚配置
 footer:
