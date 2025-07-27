@@ -43,8 +43,8 @@ footer:
       link: /atom.xml
   components:
     uptime:
-      since: "2018/05/06 17:03:12"
-      text: "本站已在风雨中飘摇"
+      since: "2014/09/28 00:00:00"
+      text: "本协会已在风雨中飘摇"
     author:
       homepage: "https://github.com/Candinya/Kratos-Rebirth/graphs/contributors"
     additional: # 托管信息等
