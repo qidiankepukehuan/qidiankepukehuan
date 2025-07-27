@@ -48,8 +48,7 @@ footer:
     author:
       homepage: "https://github.com/Candinya/Kratos-Rebirth/graphs/contributors"
     additional: # 托管信息等
-      - - 由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动
-        - 在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管
+      - - 本网站所有内容著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 # 代码高亮
 # syntax_highlighter:
@@ -78,7 +77,7 @@ share:
 
 # 打赏组件设置
 donate:
-  enable: true
+  enable: false
   title: "赞助喵"
   message: 非常感谢您的喜欢！ <i class="fa fa-heart" style="color:#d43f57"></i>
   qrcode_placeholder: "https://dev.krt.moe/demo-assets/donate.webp"
@@ -115,6 +114,22 @@ comments:
       _shared: ""
       index: ""
       post: ""
+
+# Post 文章配置
+posts:
+  default_cover: "/qidiankepukehuan/images/default.webp" # 没有头图的文章使用的默认图片
+  donate: true # 默认是否启用打赏功能
+  share: true # 默认是否启用分享功能
+  word_count: # 字数统计功能
+    enable: true # 是否启用
+    threshold: 1500 # 超过多少字开始显示为千字
+    estimate_wavy: true # 在千字的约数前显示波浪号
+  toc: # 文章目录
+    desktop: # 桌面端
+      list_number: false # 显示数字标号
+    mobile: # 移动端
+      enable: true # 是否启用
+      list_number: true # 显示数字标号
 
 # 访问数量统计
 visit_count:
