@@ -18,7 +18,7 @@
         script.setAttribute('data-mapping', 'pathname');
         script.setAttribute('data-strict', '0');
         script.setAttribute('data-reactions-enabled', '1');
-        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-emit-metadata', '1');
         script.setAttribute('data-input-position', 'top');
         script.setAttribute('data-theme', 'preferred_color_scheme');
         script.setAttribute('data-lang', 'zh-CN');
@@ -31,7 +31,7 @@
     window.addEventListener("message", function giscusMetadataListener(event) {
         if (event.origin !== "https://giscus.app") return;
         const data = event.data;
-        // console.log(data.giscus); // 💬 如果要知道giscus有提供哪些資料可用，可用這段搭配瀏覽器主控台測試
+        // console.log(data); // 💬 如果要知道giscus有提供哪些資料可用，可用這段搭配瀏覽器主控台測試
         if (data?.giscus?.discussion?.totalCommentCount !== undefined) {
             // 若有留言數據
             const comment = data.giscus.discussion.totalCommentCount;
