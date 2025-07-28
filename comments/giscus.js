@@ -30,8 +30,8 @@
 
     window.addEventListener("message", function giscusMetadataListener(event) {
         if (event.origin !== "https://giscus.app") return;
-        const data = event.data.giscus;
-        console.log(data); // 💬 如果要知道giscus有提供哪些資料可用，可用這段搭配瀏覽器主控台測試
+        const data = event.data;
+        // console.log(data.giscus); // 💬 如果要知道giscus有提供哪些資料可用，可用這段搭配瀏覽器主控台測試
         if (data?.giscus?.discussion?.totalCommentCount !== undefined) {
             // 若有留言數據
             const comment = data.giscus.discussion.totalCommentCount;
