@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+# 阻止所有 Windows Alternate Data Streams (ADS) 文件
+*:Zone.Identifier
