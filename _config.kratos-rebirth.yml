@@ -153,8 +153,9 @@ visit_count:
 ################## 额外的注入代码 ##################
 additional_injections:
   head: "" # 搜索引擎验证，或是追加的样式表
-  footer: ""
+  footer: 
   after_footer: |
     <script type="module" src="/qidiankepukehuan/comments/giscus.js"></script>
     <script type="module" src="/qidiankepukehuan/utils/random-post-cover.js"></script>
     <script src="/qidiankepukehuan/effects/cursor-effects.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/autoload.js"></script>
