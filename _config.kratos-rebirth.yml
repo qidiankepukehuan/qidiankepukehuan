@@ -157,3 +157,4 @@ additional_injections:
   after_footer: |
     <script type="module" src="/qidiankepukehuan/comments/giscus.js"></script>
     <script type="module" src="/qidiankepukehuan/utils/random-post-cover.js"></script>
+    <script src="/qidiankepukehuan/effects/cursor-effects.js"></script>
