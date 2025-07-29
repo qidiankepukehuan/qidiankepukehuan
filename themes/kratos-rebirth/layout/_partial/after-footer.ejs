@@ -1,0 +1,26 @@
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "<%- url_for('/') %>";
+</script>
+
+<% if (theme.pjax || theme.search.provider === "local") { %>
+  <%- js_npm_cdn('nprogress', 'nprogress.js', {defer: true}) %>
+<% } %>
+
+<% if (page.type !== '404' && theme.viewerjs) { %>
+  <%- js_npm_cdn('viewerjs', 'dist/viewer.min.js', {defer: true}) %>
+<% } %>
+
+<%- js_theme_cdn('js/kr-core.min.js', {defer: true}) %>
+
+<% if (theme.pjax) { %>
+  <%- js_theme_cdn('js/kr-pjax.min.js', {defer: true}) %>
+<% } %>
+
+<!-- 额外的追加注入项 -->
+<% if (theme.additional_injections.after_footer) { %>
+  <%- theme.additional_injections.after_footer %>
+<% } %>

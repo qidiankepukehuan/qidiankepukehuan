@@ -1,0 +1,67 @@
+<div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                <% for (const item of theme.nav.items) { %>
+                                    <li<% if (item.float_right) { %> class="right"<% } %>>
+                                        <% if (item.submenu) { %>
+                                            <a>
+                                        <% } else { %>
+                                            <a href="<%- url_for(item.url) %>">
+                                        <% } %>
+                                            <% if (item.icon) { %>
+                                                <%- icon_to_html(item.icon) %>
+                                            <% } %>
+                                            <%- item.label %>
+                                        </a>
+                                        <% if (item.submenu) { %>
+                                            <ul class="sub-menu">
+                                                <% for (const submenu of item.submenu) { %>
+                                                    <li>
+                                                        <a href="<%- url_for(submenu.url) %>">
+                                                            <% if (submenu.icon) { %>
+                                                                <%- icon_to_html(submenu.icon) %>
+                                                            <% } %>
+                                                            <%- submenu.label %>
+                                                        </a>
+                                                    </li>
+                                                <% } %>
+                                            </ul>
+                                        <% } %>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="<%- url_for() %>"><%= config.title %></a></div>
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="<%- url_for() %>">
+                        <h2><%= config.title %></h2> <br />
+                        <span><%= config.subtitle %></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">

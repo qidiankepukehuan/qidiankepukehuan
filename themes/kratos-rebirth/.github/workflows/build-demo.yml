@@ -1,0 +1,103 @@
+name: Build Demo Site
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    # Setup Node.js env
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 'latest'
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+        run_install: false
+
+    # Get Hexo test utils
+    - uses: actions/checkout@v4
+      with:
+        repository: 'hexojs/hexo-theme-unit-test'
+    
+    # Make dirs for themes
+    - name: Make dirs for themes
+      run: mkdir themes
+    
+    # Clone Kratos-Rebirth into themes dir
+    - uses: actions/checkout@v4
+      with:
+        path: 'themes/kratos-rebirth'
+    
+    # Clone Demo site configurations & assets into tmp
+    - uses: actions/checkout@v4
+      with:
+        repository: 'kratos-rebirth/demo-site-v3'
+        path: 'demo-site'
+
+    # Build fresh theme files
+    - name: Build theme files
+      run: |
+        cd ./themes/kratos-rebirth
+        pnpm install --frozen-lockfile
+        pnpm build
+    
+    # Edit hexo site settings
+    - name: Edit Hexo site settings
+      run: |
+        sed -i "s/title: Hexo/title: 'Kratos : Rebirth'/"                            "_config.yml"
+        sed -i "s/subtitle: ''/subtitle: 一个可爱而现代的 Hexo 主题/"                    "_config.yml"
+        sed -i "s/description: ''/description: 欢迎使用这个主题，希望能给您带来美好的体验。/" "_config.yml"
+        sed -i "s/author: John Doe/author: Candinya/"                                "_config.yml"
+        sed -i "s/language:/language: zh-CN/"                                        "_config.yml"
+        sed -i "s|url: http://example.com|url: https://dev.krt.moe|"                 "_config.yml"
+        sed -i "s|permalink: :year/:month/:day/:title/|permalink: posts/:title/|"    "_config.yml"
+        sed -i "s/theme: landscape/theme: kratos-rebirth/"                           "_config.yml"
+
+    # Copy extended theme settings
+    - name: Copy extended theme settings
+      run: mv "demo-site/_config.kratos-rebirth.yml" "_config.kratos-rebirth.yml"
+
+    # Prepare assets
+    - name: Prepare assets
+      run: mv demo-site/assets source/demo-assets
+
+    # Install Hexo env
+    - name: Install Hexo environment
+      run: npm install
+
+    # Install post-time-fix plugin
+    - name: Install post-time-fix plugin
+      run: npm install hexo-filter-date-from-git --save
+    
+    # Hexo build demo site
+    - name: Hexo build demo site
+      run: npx hexo generate --force
+
+    - name: Upload artifacts for pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

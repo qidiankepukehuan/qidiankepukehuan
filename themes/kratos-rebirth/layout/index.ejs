@@ -1,0 +1,34 @@
+<!-- Breadcrumb for tag & category page -->
+<% if (page.tag || page.category) { %>
+    <%- partial('_partial/breadcrumb') %>
+<% } %>
+
+<% page.posts.each(function(post) { %>
+    <% if (post.show_in) {
+        const postShow = 
+            post.show_in.includes('home') && is_home()
+            || post.show_in.includes('category') && is_category()
+            || post.show_in.includes('tag') && is_tag();
+        if (!postShow) {
+            return false;
+        }
+    } %>
+    <% if (!post.title || post.link) { %>
+        <%- partial('_index_style/status', { post: post }) %>
+    <% } else { %>
+        <%- partial(`_index_style/${theme.index.style}`, { post: post }) %>
+    <% } %>
+<% }) %>
+
+<% if (page.total > 1) { %>
+    <div class='text-center pagination'>
+    <%- paginator({prev_text: '<i class="fa fa-angle-left"></i>', next_text: '<i class="fa fa-angle-right"></i>', escape: false}) %>
+    </div>
+<% } %>
+
+
+<% if (theme.comments.core.enable_at.includes('index')) { %>
+    <div class="comment-index">
+        <%- process_template_path(theme.comments.core.template._shared + theme.comments.core.template.index, page.path, "comments") %>
+    </div>
+<% } %>

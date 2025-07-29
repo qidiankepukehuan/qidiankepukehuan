@@ -1,0 +1,37 @@
+<aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="<%= theme.image.avatar %>" alt="<%= config.author %>" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"><%- config.description %></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="<%- url_for('/archives/') %>">
+            <span class="title">
+                <%- __('title.post') %>
+            </span>
+            <span class="count">
+                <%- site.posts.length %>
+            </span>
+        </a>
+        <a class="meta-item" href="<%- url_for('/categories/') %>">
+            <span class="title">
+                <%- __('title.category') %>
+            </span>
+            <span class="count">
+                <%- site.categories.length %>
+            </span>
+        </a>
+        <a class="meta-item" href="<%- url_for('/tags/') %>">
+            <span class="title">
+                <%- __('title.tag') %>
+            </span>
+            <span class="count">
+                <%- site.tags.length %>
+            </span>
+        </a>
+    </div>
+</aside>

@@ -1,0 +1,206 @@
+# 请注意这是主题的底层配置，不推荐直接作为主题配置文件使用。
+# 如果您需要一个基础的配置模板，请使用
+# https://github.com/kratos-rebirth/quickstart/blob/main/_config.kratos-rebirth.yml 。
+
+################## 系统配置 ##################
+
+# 依赖文件
+vendors:
+  npm_cdn: "" # 默认使用站点直接提供
+  packages: # 具体的项目
+    nprogress:
+      version: "0.2.0"
+    qr-code-styling:
+      version: "1.6.0-rc.1"
+    font-awesome:
+      version: "4.7.0"
+    viewerjs:
+      version: "1.11.6"
+
+################## 重要功能配置 ##################
+
+# 启用更新检查
+check_update: true
+
+# 启用页面局部更新功能
+pjax: true
+
+# 启用文章内图片点击放大功能
+viewerjs: true
+
+# 搜索
+search:
+  provider: "local" # 搜索提供引擎， local / external / none
+  path: # 搜索生成的文件的路径
+    page: search
+    index_file: search-index.json
+  includes: [] # 搜索包含的内容
+  # - post
+  # - page
+  content: true # 包含文章和页面的内容
+
+################## 样式配置 ##################
+
+# 图片配置
+image:
+  favicon: "" # 站点图标
+  avatar: "/qidiankepukehuan/images/user.svg" # 个人信息挂件上的头像
+  banner: # 站点横幅
+    light: "" # 亮色模式
+    dark: "" # 暗色模式
+  background: # 站点背景
+    light: "" # 亮色模式
+    dark: "" # 暗色模式
+  about: # 介绍卡片
+    light: "/qidiankepukehuan/images/default.webp" # 亮色模式
+    dark: "/qidiankepukehuan/images/default.webp" # 暗色模式
+
+# 导航栏配置
+nav:
+  auto_hide: true # 桌面端向上滚动时自动收缩
+  items: []
+  # - label: # 这个菜单的标签文字
+  #   icon: # 这个菜单前的图标，可以不设置。使用来自 fontawesome icons 4.7.0 图标库中的唯一标识；或者插入自定义的 HTML ，例如您可在此放置一串 svg 。
+  #   url: # 这个菜单指向的链接（站内或是站外均可）
+  #   submenu: # 这个菜单是否为一个二级菜单，有了这个选项就会忽略上面的 url
+  #     - label: # 二级菜单项的标签文字
+  #       icon: # 这个菜单前的图标，可以不设置。使用来自 fontawesome icons 4.7.0 图标库中的唯一标识；或者插入自定义的 HTML ，例如您可在此放置一串 svg 。
+  #       url: # 二级菜单项指向的链接
+
+# 文章的列表配置（首页/分页/标签页）
+index:
+  style: "card" # card / half
+
+# Footer 页脚配置
+footer:
+  links: []
+  # - icon: # 使用来自 fontawesome icons 4.7.0 图标库中的唯一标识；或者插入自定义的 HTML ，例如您可在此放置一串 svg 。
+  #   link: # 按钮导向的目标链接
+  #   addition: target="_blank" rel="nofollow" # 可选，用于指定链接的追加模式信息
+  components: # 一些有特色的组件 （其他的请在 additional 自行追加）
+    uptime:
+      since: "2025/07/25 00:00:00"
+      text: "本站已运行"
+    author:
+      homepage: "" # 可以导向作者的首页
+    additional: [] # 自行追加的内容，例如托管信息
+
+# Post 文章配置
+posts:
+  default_cover: "/qidiankepukehuan/images/default.webp" # 没有头图的文章使用的默认图片
+  donate: true # 默认是否启用打赏功能
+  share: true # 默认是否启用分享功能
+  word_count: # 字数统计功能
+    enable: true # 是否启用
+    threshold: 1500 # 超过多少字开始显示为千字
+    estimate_wavy: true # 在千字的约数前显示波浪号
+  toc: # 文章目录
+    desktop: # 桌面端
+      list_number: false # 显示数字标号
+    mobile: # 移动端
+      enable: true # 是否启用
+      list_number: true # 显示数字标号
+
+# Page 一般页面配置
+pages:
+  donate: true # 默认是否启用打赏功能
+  share: true # 默认是否启用分享功能
+
+# 代码高亮
+syntax_highlighter:
+  theme: night-eighties # 代码高亮主题（请参照具体的高亮插件对应的主题样式）
+
+# 侧边栏与小挂件
+sidebar:
+  location: right # 侧边栏的位置
+  widgets: [] # 小挂件的顺序
+  # - about # 关于
+  # - splitter # 分割线（这个不是个实际挂件，而是用来切分定位的）
+  # - toc # 目录
+  # - category # 分类列表
+  # - tagcloud # 标签聚合
+  # - posts # 最新文章
+
+# 分享组件设置
+share:
+  enable: true # 是否启用分享功能
+  title: "分享" # 弹出窗口的标题
+  message: "分享提示信息" # 弹出窗口显示的文字
+  platforms: [] # 可以分享去的平台
+  # - name: "" # 平台名字
+  #   icon: # 平台图标。使用来自 fontawesome icons 4.7.0 图标库中的唯一标识；或者插入自定义的 HTML ，例如您可在此放置一串 svg 。
+  #   color: ""
+  #   link: ""
+
+# 打赏组件设置
+donate:
+  enable: false # 是否启用打赏功能
+  title: "打赏" # 弹出窗口的标题
+  message: "打赏提示信息" # 弹出窗口显示的文字
+  qrcode_placeholder: "" # 对应平台的二维码出现前的占位图片
+  platforms: [] # 可以用于打赏的平台
+  # - name: ""
+  #   icon: # 使用来自 fontawesome icons 4.7.0 图标库中的唯一标识；或者插入自定义的 HTML ，例如您可在此放置一串 svg 。
+  #   color: ""
+  #   link: "" # 和 qrcode 二选一，使用这项则点击图标时会打开前往指定链接的新窗口。
+  #   qrcode: "" # 和 link 二选一，使用这项则点击图标时会在窗口的二维码展示区展示使用指定内容生成的二维码。
+
+# 版权提示
+copyright_notice:
+  in_page: # 在页面内显示
+    enable_at: [] # 启用的位置
+    # - post
+    # - page
+    template: 本网站所有内容著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+  append_copy: # 在复制时追加
+    enable: true # 是否启用
+    threshold: 150 # 超过多少字符就追加
+    template: | # 模板
+      $NEWLINE
+      -------------------------
+      本网站所有内容著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      作者：$AUTHOR
+      来源：$TITLE
+      链接：$LINK
+
+################## 评论与访问量统计 ##################
+
+# 评论系统
+comments:
+  core: # 评论挂件
+    enable_at: [] # 启用的位置
+    # - index
+    # - post
+    # - page
+    template: # 模板
+      _shared: "" # 所有地方都共享的
+      index: ""
+      post: ""
+      page: ""
+  count: # 评论计数
+    enable_at: [] # 启用的位置
+    # - index
+    # - post
+    # - page
+    template:
+      _shared: "" # 所有地方都共享的
+      index: ""
+      post: ""
+  path_hasher: "md5" # 对路径进行摘要使用的算法
+
+# 访问数量统计
+visit_count:
+  enable_at: []
+  # - index
+  # - post
+  template:
+    _shared: "" # 所有地方都共享的
+    index: ""
+    post: ""
+  path_hasher: "md5" # 对路径进行摘要使用的算法
+
+################## 额外的注入代码 ##################
+additional_injections:
+  head: "" # 注入到 head 标签里的内容，例如额外的样式表
+  footer: "" # 注入到页面主体的内容，例如额外的可见组件
+  after_footer: "" # 注入到页面内容之后的内容，例如各种额外的脚本文件

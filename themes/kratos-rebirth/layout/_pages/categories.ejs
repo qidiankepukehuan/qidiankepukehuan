@@ -1,0 +1,73 @@
+<style>
+  .categories ul {
+    list-style: none;
+  }
+
+  .categories .category-list-item {
+    position: relative;
+    padding-top: 20px;
+  }
+
+  .categories .category-list-item .category-list-link::before {
+    content: " ";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    margin-left: -4px;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    background: #bbb;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .categories .category-list-item .category-list-link:hover::before {
+    background: #222;
+  }
+
+  a {
+    color: #666;
+  }
+
+  .categories .category-list-item .category-list-link {
+    position: relative;
+    margin-left: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: inherit;
+  }
+
+  .categories .category-list-item .category-list-link::after {
+    opacity: 0;
+    font-family: fontawesome;
+    content: "\f138";
+    margin-left: 12px;
+    color: #00a7e0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .categories .category-list-item .category-list-link:hover::after {
+    opacity: 100%;
+  }
+</style>
+
+<article>
+  <div class="kratos-hentry kratos-page-inner clearfix">
+    <header class="kratos-page-header">
+      <h1 class="kratos-page-title text-center" itemprop="name headline"><%- __('title.categories_list') %></h1>
+    </header>
+    <div class="kratos-page-content kr-categories">
+      <div style="margin-left: 2em;">
+        <h3 class="archive-page-counter">
+          <%- __('list_page_count_message.categories', site.categories.length ) %>
+        </h3>
+        <div class="categories">
+          <% if (site.categories.length){ %>
+            <%- list_categories({show_count: false}) %>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

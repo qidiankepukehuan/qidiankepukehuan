@@ -1,0 +1,42 @@
+<article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="<%= page.permalink %>">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            <% if (page.title) { %>
+                <h1 class="kratos-page-title text-center" itemprop="name headline"><%- page.title %></h1>
+            <% } %>
+        </header>
+        <div class="kratos-page-content kr-page">
+            <div itemprop="articleBody"><%- page.content %></div>
+        </div>
+        <% if (typeof page.show_copyright !== 'undefined' ? page.show_copyright : theme.copyright_notice.in_page.enable_at.includes("page")) { %>
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice"><%- page.copyright_notice_template || theme.copyright_notice.in_page.template %></span>
+            </div>
+        <% } %>
+        <footer class="kratos-entry-footer clearfix">
+            <% const donateEnable = page.donate !== false && theme.pages.donate && theme.donate.enable; %>
+            <% const shareEnable = page.share !== false && theme.pages.share && theme.share.enable; %>
+            <% if (donateEnable || shareEnable) { %>
+                <div class="post-actions text-center clearfix" id="post-actions">
+                <% if (donateEnable) { %>
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> <%- __('post_action.donate') %></a>
+                <% } %>
+                <% if (shareEnable) { %>
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> <%- __('post_action.share') %></a>
+                <% } %>
+                </div>
+            <% } %>
+            <div class="footer-tag clearfix">
+                <div class="pull-date">
+                    <time datetime="<%= date_xml(page.updated) %>" itemprop="dateModified"><%- __('last_update') %><%- date(page.updated) %></time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <% if (page.comments && theme.comments.core.enable_at.includes('page')) { %>
+        <div class="comment-page">
+            <%- process_template_path(theme.comments.core.template._shared + theme.comments.core.template.page, page.path, "comments") %>
+        </div>
+    <% } %>
+</article>

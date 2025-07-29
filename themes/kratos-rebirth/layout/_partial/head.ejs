@@ -1,0 +1,102 @@
+<head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <% if (theme.image.favicon) { %>
+    <link rel="icon" href="<%- theme.image.favicon %>">
+  <% } %>
+  <%
+  let title = page.title || __(page.title_i18n);
+  if (is_archive()){
+    title = __('title.archive');
+    if (is_month()){
+      title += ': ' + page.year + '-' + String(page.month).padStart(2, '0');
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('title.category') + ': ' + page.category;
+  } else if (is_tag()){
+    title = __('title.tag') + ': ' + page.tag;
+  } else if (is_post() && !title){
+    title = __('title.status');
+  }
+  %>
+  <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+  <link rel="canonical" href="<%- full_url_for(page.path) %>">
+  <meta name="author" content="<%- page.author || config.author  %>" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <% if (is_post()) { %>
+    <meta name="keywords" content="<%- strip_html(list_tags(page.tags, { show_count: false, style: 'none' })) %>" />
+  <% } else { %>
+    <meta name="keywords" content="<%- config.keywords %>" />
+  <% } %>
+  <%- open_graph({
+    image: (function(){
+      const image_path = page.cover ? page.path + page.cover : theme.site_logo;
+      return image_path ? full_url_for(image_path) : null;
+    })(),
+    // twitter_site: theme.contact.twitter ? "@" + theme.contact.twitter : null,
+    title
+  }) %>
+  <% if (config.feed) { %>
+    <%- feed_tag() %>
+  <% } %>
+  <!-- 样式表文件 -->
+  <%- css_theme_cdn('css/kr-core.min.css', {id: "kratos-css", media:"all"}) %>
+  <% if (config.syntax_highlighter && theme.syntax_highlighter.theme) { %>
+    <%- css_theme_cdn(`css/highlight/${config.syntax_highlighter}/${theme.syntax_highlighter.theme}.min.css`, {id: "highlight-css", media:"all"}) %>
+  <% } %>
+  <%- css_theme_cdn('css/kr-theme/light.min.css', {id: "theme-light-css", media:"all"}) %>
+  <%- css_theme_cdn('css/kr-theme/dark.min.css', {id: "theme-dark-css", media:"(prefers-color-scheme: dark)"}) %>
+  <%- js_theme_cdn('js/kr-theme.min.js') %>
+  <%- css_npm_cdn('font-awesome', 'css/font-awesome.min.css', {id:"fontawe-css", media:"all"}) %>
+  <% if (theme.pjax || theme.search.provider === "local") { %>
+    <%- css_npm_cdn('nprogress', 'nprogress.css', {id:"nprogress-css", media:"all"}) %>
+  <% } %>
+  <% if (page.type !== '404' && theme.viewerjs) { %>
+    <%- css_npm_cdn('viewerjs', 'dist/viewer.min.css', {defer: true}) %>
+  <% } %>
+  <!-- 不得不预先加载的一些JS文件 -->
+  <% if (theme.share.enable || theme.donate.enable) { %>
+    <%- js_npm_cdn('qr-code-styling', 'lib/qr-code-styling.js') %>
+  <% } %>
+  <!-- 自定义站点横幅和背景 -->
+  <style>
+    <% if (theme.image.banner) { %>
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('<%- theme.image.banner.light %>');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('<%- theme.image.banner.dark %>');
+      }
+    <% } %>
+    <% if (theme.image.background) { %>
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('<%- theme.image.background.light %>');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('<%- theme.image.background.dark %>');
+        }
+      }
+    <% } %>
+    <% if (theme.image.about) { %>
+      .widget-kratos-about .photo-background {
+        background-image: url('<%- theme.image.about.light %>');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('<%- theme.image.about.dark %>');
+      }
+    <% } %>
+  </style>
+
+  <!-- 额外的追加注入项 -->
+  <% if (theme.additional_injections.head) { %>
+    <%- theme.additional_injections.head %>
+  <% } %>
+</head>

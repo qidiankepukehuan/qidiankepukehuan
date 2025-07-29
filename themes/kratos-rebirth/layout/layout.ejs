@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+    <%- partial('_partial/head') %>
+    <body class="custom-background">
+        <%- partial('_partial/header') %>
+
+        <% if (page.type !== "404") { %>
+
+            <% if (theme.sidebar.location === 'left') { %>
+                <%- partial('_partial/sidebar') %>
+            <% } %>
+
+            <section class="kr-main-col col-md-<%- (theme.sidebar.location === 'left' || theme.sidebar.location === 'right') ? '8' : '12' %>">
+
+        <% } %>
+
+            <%- body %>
+
+        <% if (page.type !== "404") { %>
+
+            </section>
+
+            <% if (theme.sidebar.location === 'right') { %>
+                <%- partial('_partial/sidebar') %>
+            <% } %>
+
+        <% } %>
+
+        <%- partial('_partial/footer') %>
+        <%- partial('_partial/after-footer') %>
+    </body>
+</html>
