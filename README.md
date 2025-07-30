@@ -84,3 +84,6 @@ https://code.visualstudio.com/
 
 
 ## © 2025 奇点科普科幻协会
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="知识共享许可协议" src="https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png" />
+</a>
