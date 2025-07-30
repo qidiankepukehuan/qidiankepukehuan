@@ -17,8 +17,8 @@
     ├── _config.yml          # Hexo 主配置
     ├── _config.kratos-rebirth.yml   # 主题配置
     ├── source/
-    |   ├──── _post/      # 文章与封面图
-    |   ├──── photos/     # 文章配图
+        ├──── _post/      # 文章与封面图
+        └──── photos/     # 文章配图
     ├── scaffolds/           # 文章模板
     ├── themes/kratos-rebirth # 主题文件（git submodule）
     └── .github/workflows/   # GitHub Actions 自动部署
@@ -64,7 +64,7 @@ https://code.visualstudio.com/
     tags:
     - 社论
     - 游戏评测
-    cover: cover.jpg
+    cover: cover.jpg    # 封面图存放至文章同名文件夹下，并与文章置于同一目录下
    ---
 
    以下接正文（使用 markdown 格式书写）
