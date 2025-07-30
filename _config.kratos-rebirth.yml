@@ -158,4 +158,4 @@ additional_injections:
     <script type="module" src="/qidiankepukehuan/comments/giscus.js"></script>
     <script type="module" src="/qidiankepukehuan/utils/random-post-cover.js"></script>
     <script src="/qidiankepukehuan/effects/cursor-effects.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/qidiankepukehuan/live2d-models@1.0.2/dist/autoload.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qidiankepukehuan/live2d-models@1.0.3/dist/autoload.js"></script>
