@@ -6,5 +6,6 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+LICENSE-CC-BY-NC-SA-4.0.txt
 # 阻止所有 Windows Alternate Data Streams (ADS) 文件
 *:Zone.Identifier
