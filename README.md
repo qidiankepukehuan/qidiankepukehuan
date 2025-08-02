@@ -76,7 +76,7 @@ https://code.visualstudio.com/
 <br> commit 信息格式为 "YYYY-MM-DD HH-MM-SS Upload posts..."
 
 ## 👀 联系我们
-- 协会邮箱： sblydyzbjb@163.com
+- 协会邮箱： tsblydyzbjb@163.com
 - QQ群：292437202
 - <img width="300" height="300" alt="temp_qrcode_share_292437202" src="https://github.com/user-attachments/assets/ffc50f47-4ea8-4bb3-a6e6-a5a84d8cedd5" />
       
