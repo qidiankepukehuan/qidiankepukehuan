@@ -3,11 +3,11 @@
   <title>奇点科普科幻协会</title>
   
   <subtitle>探索科学与幻想的边界</subtitle>
-  <link href="https://qidiankepukehuan.github.io/atom.xml" rel="self"/>
+  <link href="https://qidian.space/atom.xml" rel="self"/>
   
-  <link href="https://qidiankepukehuan.github.io/"/>
+  <link href="https://qidian.space/"/>
   <updated>2025-07-31T04:09:57.794Z</updated>
-  <id>https://qidiankepukehuan.github.io/</id>
+  <id>https://qidian.space/</id>
   
   <author>
     <name>奇点科普科幻协会</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>腾空类星陨：星舰前的可回收航天器方案</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E8%85%BE%E7%A9%BA%E7%B1%BB%E6%98%9F%E9%99%A8%EF%BC%9A%E6%98%9F%E8%88%B0%E5%89%8D%E7%9A%84%E5%8F%AF%E5%9B%9E%E6%94%B6%E8%88%AA%E5%A4%A9%E5%99%A8%E6%96%B9%E6%A1%88/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E8%85%BE%E7%A9%BA%E7%B1%BB%E6%98%9F%E9%99%A8%EF%BC%9A%E6%98%9F%E8%88%B0%E5%89%8D%E7%9A%84%E5%8F%AF%E5%9B%9E%E6%94%B6%E8%88%AA%E5%A4%A9%E5%99%A8%E6%96%B9%E6%A1%88/</id>
+    <link href="https://qidian.space/posts/%E8%85%BE%E7%A9%BA%E7%B1%BB%E6%98%9F%E9%99%A8%EF%BC%9A%E6%98%9F%E8%88%B0%E5%89%8D%E7%9A%84%E5%8F%AF%E5%9B%9E%E6%94%B6%E8%88%AA%E5%A4%A9%E5%99%A8%E6%96%B9%E6%A1%88/"/>
+    <id>https://qidian.space/posts/%E8%85%BE%E7%A9%BA%E7%B1%BB%E6%98%9F%E9%99%A8%EF%BC%9A%E6%98%9F%E8%88%B0%E5%89%8D%E7%9A%84%E5%8F%AF%E5%9B%9E%E6%94%B6%E8%88%AA%E5%A4%A9%E5%99%A8%E6%96%B9%E6%A1%88/</id>
     <published>2025-07-26T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="科普" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://qidian.space/tags/%E7%A7%91%E6%99%AE/"/>
     
   </entry>
   
   <entry>
     <title>《星际拓荒》指北——欢迎来到「拓荒」知识之塔</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E3%80%8A%E6%98%9F%E9%99%85%E6%8B%93%E8%8D%92%E3%80%8B%E6%8C%87%E5%8C%97%E2%80%94%E2%80%94%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E3%80%8C%E6%8B%93%E8%8D%92%E3%80%8D%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%A1%94/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E3%80%8A%E6%98%9F%E9%99%85%E6%8B%93%E8%8D%92%E3%80%8B%E6%8C%87%E5%8C%97%E2%80%94%E2%80%94%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E3%80%8C%E6%8B%93%E8%8D%92%E3%80%8D%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%A1%94/</id>
+    <link href="https://qidian.space/posts/%E3%80%8A%E6%98%9F%E9%99%85%E6%8B%93%E8%8D%92%E3%80%8B%E6%8C%87%E5%8C%97%E2%80%94%E2%80%94%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E3%80%8C%E6%8B%93%E8%8D%92%E3%80%8D%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%A1%94/"/>
+    <id>https://qidian.space/posts/%E3%80%8A%E6%98%9F%E9%99%85%E6%8B%93%E8%8D%92%E3%80%8B%E6%8C%87%E5%8C%97%E2%80%94%E2%80%94%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E3%80%8C%E6%8B%93%E8%8D%92%E3%80%8D%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%A1%94/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -55,19 +55,19 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="社论" scheme="https://qidiankepukehuan.github.io/tags/%E7%A4%BE%E8%AE%BA/"/>
+    <category term="社论" scheme="https://qidian.space/tags/%E7%A4%BE%E8%AE%BA/"/>
     
-    <category term="游戏评测" scheme="https://qidiankepukehuan.github.io/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/"/>
+    <category term="游戏评测" scheme="https://qidian.space/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
     <title>三城记</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E4%B8%89%E5%9F%8E%E8%AE%B0/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E4%B8%89%E5%9F%8E%E8%AE%B0/</id>
+    <link href="https://qidian.space/posts/%E4%B8%89%E5%9F%8E%E8%AE%B0/"/>
+    <id>https://qidian.space/posts/%E4%B8%89%E5%9F%8E%E8%AE%B0/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -81,17 +81,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>丹尼斯·维伦纽瓦的科幻电影美学杂谈：基于《降临》、《银翼杀手2049》与《沙丘》分析</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E7%BB%B4%E4%BC%A6%E7%BA%BD%E7%93%A6%E7%9A%84%E7%A7%91%E5%B9%BB%E7%94%B5%E5%BD%B1%E7%BE%8E%E5%AD%A6%E6%9D%82%E8%B0%88%EF%BC%9A%E5%9F%BA%E4%BA%8E%E3%80%8A%E9%99%8D%E4%B8%B4%E3%80%8B%E3%80%81%E3%80%8A%E9%93%B6%E7%BF%BC%E6%9D%80%E6%89%8B2049%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E4%B8%98%E3%80%8B%E5%88%86%E6%9E%90/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E7%BB%B4%E4%BC%A6%E7%BA%BD%E7%93%A6%E7%9A%84%E7%A7%91%E5%B9%BB%E7%94%B5%E5%BD%B1%E7%BE%8E%E5%AD%A6%E6%9D%82%E8%B0%88%EF%BC%9A%E5%9F%BA%E4%BA%8E%E3%80%8A%E9%99%8D%E4%B8%B4%E3%80%8B%E3%80%81%E3%80%8A%E9%93%B6%E7%BF%BC%E6%9D%80%E6%89%8B2049%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E4%B8%98%E3%80%8B%E5%88%86%E6%9E%90/</id>
+    <link href="https://qidian.space/posts/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E7%BB%B4%E4%BC%A6%E7%BA%BD%E7%93%A6%E7%9A%84%E7%A7%91%E5%B9%BB%E7%94%B5%E5%BD%B1%E7%BE%8E%E5%AD%A6%E6%9D%82%E8%B0%88%EF%BC%9A%E5%9F%BA%E4%BA%8E%E3%80%8A%E9%99%8D%E4%B8%B4%E3%80%8B%E3%80%81%E3%80%8A%E9%93%B6%E7%BF%BC%E6%9D%80%E6%89%8B2049%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E4%B8%98%E3%80%8B%E5%88%86%E6%9E%90/"/>
+    <id>https://qidian.space/posts/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E7%BB%B4%E4%BC%A6%E7%BA%BD%E7%93%A6%E7%9A%84%E7%A7%91%E5%B9%BB%E7%94%B5%E5%BD%B1%E7%BE%8E%E5%AD%A6%E6%9D%82%E8%B0%88%EF%BC%9A%E5%9F%BA%E4%BA%8E%E3%80%8A%E9%99%8D%E4%B8%B4%E3%80%8B%E3%80%81%E3%80%8A%E9%93%B6%E7%BF%BC%E6%9D%80%E6%89%8B2049%E3%80%8B%E4%B8%8E%E3%80%8A%E6%B2%99%E4%B8%98%E3%80%8B%E5%88%86%E6%9E%90/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -105,19 +105,19 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="社论" scheme="https://qidiankepukehuan.github.io/tags/%E7%A4%BE%E8%AE%BA/"/>
+    <category term="社论" scheme="https://qidian.space/tags/%E7%A4%BE%E8%AE%BA/"/>
     
-    <category term="电影赏析" scheme="https://qidiankepukehuan.github.io/tags/%E7%94%B5%E5%BD%B1%E8%B5%8F%E6%9E%90/"/>
+    <category term="电影赏析" scheme="https://qidian.space/tags/%E7%94%B5%E5%BD%B1%E8%B5%8F%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>为了忘却</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4/</id>
+    <link href="https://qidian.space/posts/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4/"/>
+    <id>https://qidian.space/posts/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -131,17 +131,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://qidian.space/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>全世界幻迷团结起来</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%85%A8%E4%B8%96%E7%95%8C%E5%B9%BB%E8%BF%B7%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%85%A8%E4%B8%96%E7%95%8C%E5%B9%BB%E8%BF%B7%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5/</id>
+    <link href="https://qidian.space/posts/%E5%85%A8%E4%B8%96%E7%95%8C%E5%B9%BB%E8%BF%B7%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5/"/>
+    <id>https://qidian.space/posts/%E5%85%A8%E4%B8%96%E7%95%8C%E5%B9%BB%E8%BF%B7%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -155,17 +155,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://qidian.space/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>吐不出来一点</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%90%90%E4%B8%8D%E5%87%BA%E6%9D%A5%E4%B8%80%E7%82%B9/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%90%90%E4%B8%8D%E5%87%BA%E6%9D%A5%E4%B8%80%E7%82%B9/</id>
+    <link href="https://qidian.space/posts/%E5%90%90%E4%B8%8D%E5%87%BA%E6%9D%A5%E4%B8%80%E7%82%B9/"/>
+    <id>https://qidian.space/posts/%E5%90%90%E4%B8%8D%E5%87%BA%E6%9D%A5%E4%B8%80%E7%82%B9/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -179,17 +179,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>地王幕布</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%9C%B0%E7%8E%8B%E5%B9%95%E5%B8%83/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%9C%B0%E7%8E%8B%E5%B9%95%E5%B8%83/</id>
+    <link href="https://qidian.space/posts/%E5%9C%B0%E7%8E%8B%E5%B9%95%E5%B8%83/"/>
+    <id>https://qidian.space/posts/%E5%9C%B0%E7%8E%8B%E5%B9%95%E5%B8%83/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -203,17 +203,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>坠落黑洞</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%9D%A0%E8%90%BD%E9%BB%91%E6%B4%9E/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%9D%A0%E8%90%BD%E9%BB%91%E6%B4%9E/</id>
+    <link href="https://qidian.space/posts/%E5%9D%A0%E8%90%BD%E9%BB%91%E6%B4%9E/"/>
+    <id>https://qidian.space/posts/%E5%9D%A0%E8%90%BD%E9%BB%91%E6%B4%9E/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -229,17 +229,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="诗歌" scheme="https://qidiankepukehuan.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+    <category term="诗歌" scheme="https://qidian.space/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
   <entry>
     <title>太阳景观</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%A4%AA%E9%98%B3%E6%99%AF%E8%A7%82/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%A4%AA%E9%98%B3%E6%99%AF%E8%A7%82/</id>
+    <link href="https://qidian.space/posts/%E5%A4%AA%E9%98%B3%E6%99%AF%E8%A7%82/"/>
+    <id>https://qidian.space/posts/%E5%A4%AA%E9%98%B3%E6%99%AF%E8%A7%82/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -253,17 +253,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>奇幻还是科幻？</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%A5%87%E5%B9%BB%E8%BF%98%E6%98%AF%E7%A7%91%E5%B9%BB%EF%BC%9F/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%A5%87%E5%B9%BB%E8%BF%98%E6%98%AF%E7%A7%91%E5%B9%BB%EF%BC%9F/</id>
+    <link href="https://qidian.space/posts/%E5%A5%87%E5%B9%BB%E8%BF%98%E6%98%AF%E7%A7%91%E5%B9%BB%EF%BC%9F/"/>
+    <id>https://qidian.space/posts/%E5%A5%87%E5%B9%BB%E8%BF%98%E6%98%AF%E7%A7%91%E5%B9%BB%EF%BC%9F/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -277,17 +277,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://qidian.space/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>对初代目会长的采访</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E5%AF%B9%E5%88%9D%E4%BB%A3%E7%9B%AE%E4%BC%9A%E9%95%BF%E9%87%87%E8%AE%BF/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E5%AF%B9%E5%88%9D%E4%BB%A3%E7%9B%AE%E4%BC%9A%E9%95%BF%E9%87%87%E8%AE%BF/</id>
+    <link href="https://qidian.space/posts/%E5%AF%B9%E5%88%9D%E4%BB%A3%E7%9B%AE%E4%BC%9A%E9%95%BF%E9%87%87%E8%AE%BF/"/>
+    <id>https://qidian.space/posts/%E5%AF%B9%E5%88%9D%E4%BB%A3%E7%9B%AE%E4%BC%9A%E9%95%BF%E9%87%87%E8%AE%BF/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -302,17 +302,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="采访" scheme="https://qidiankepukehuan.github.io/tags/%E9%87%87%E8%AE%BF/"/>
+    <category term="采访" scheme="https://qidian.space/tags/%E9%87%87%E8%AE%BF/"/>
     
   </entry>
   
   <entry>
     <title>恶魔</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%81%B6%E9%AD%94/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%81%B6%E9%AD%94/</id>
+    <link href="https://qidian.space/posts/%E6%81%B6%E9%AD%94/"/>
+    <id>https://qidian.space/posts/%E6%81%B6%E9%AD%94/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -327,17 +327,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>我没有歌能给你听</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%88%91%E6%B2%A1%E6%9C%89%E6%AD%8C%E8%83%BD%E5%94%B1%E7%BB%99%E4%BD%A0%E5%90%AC/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%88%91%E6%B2%A1%E6%9C%89%E6%AD%8C%E8%83%BD%E5%94%B1%E7%BB%99%E4%BD%A0%E5%90%AC/</id>
+    <link href="https://qidian.space/posts/%E6%88%91%E6%B2%A1%E6%9C%89%E6%AD%8C%E8%83%BD%E5%94%B1%E7%BB%99%E4%BD%A0%E5%90%AC/"/>
+    <id>https://qidian.space/posts/%E6%88%91%E6%B2%A1%E6%9C%89%E6%AD%8C%E8%83%BD%E5%94%B1%E7%BB%99%E4%BD%A0%E5%90%AC/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -351,17 +351,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>无题</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%97%A0%E9%A2%98/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%97%A0%E9%A2%98/</id>
+    <link href="https://qidian.space/posts/%E6%97%A0%E9%A2%98/"/>
+    <id>https://qidian.space/posts/%E6%97%A0%E9%A2%98/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -377,17 +377,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="诗歌" scheme="https://qidiankepukehuan.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+    <category term="诗歌" scheme="https://qidian.space/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
   <entry>
     <title>时间</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%97%B6%E9%97%B4/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%97%B6%E9%97%B4/</id>
+    <link href="https://qidian.space/posts/%E6%97%B6%E9%97%B4/"/>
+    <id>https://qidian.space/posts/%E6%97%B6%E9%97%B4/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -402,17 +402,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>极光下的挽歌</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%9E%81%E5%85%89%E4%B8%8B%E7%9A%84%E6%8C%BD%E6%AD%8C/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%9E%81%E5%85%89%E4%B8%8B%E7%9A%84%E6%8C%BD%E6%AD%8C/</id>
+    <link href="https://qidian.space/posts/%E6%9E%81%E5%85%89%E4%B8%8B%E7%9A%84%E6%8C%BD%E6%AD%8C/"/>
+    <id>https://qidian.space/posts/%E6%9E%81%E5%85%89%E4%B8%8B%E7%9A%84%E6%8C%BD%E6%AD%8C/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -426,17 +426,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>梦海</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%A2%A6%E6%B5%B7/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%A2%A6%E6%B5%B7/</id>
+    <link href="https://qidian.space/posts/%E6%A2%A6%E6%B5%B7/"/>
+    <id>https://qidian.space/posts/%E6%A2%A6%E6%B5%B7/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -450,17 +450,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="科幻小说" scheme="https://qidiankepukehuan.github.io/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="科幻小说" scheme="https://qidian.space/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>清纯正义科幻迷也会遇到肮脏邪恶资本家吗？</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E6%B8%85%E7%BA%AF%E6%AD%A3%E4%B9%89%E7%A7%91%E5%B9%BB%E8%BF%B7%E4%B9%9F%E4%BC%9A%E9%81%87%E5%88%B0%E8%82%AE%E8%84%8F%E9%82%AA%E6%81%B6%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%90%97%EF%BC%9F/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E6%B8%85%E7%BA%AF%E6%AD%A3%E4%B9%89%E7%A7%91%E5%B9%BB%E8%BF%B7%E4%B9%9F%E4%BC%9A%E9%81%87%E5%88%B0%E8%82%AE%E8%84%8F%E9%82%AA%E6%81%B6%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%90%97%EF%BC%9F/</id>
+    <link href="https://qidian.space/posts/%E6%B8%85%E7%BA%AF%E6%AD%A3%E4%B9%89%E7%A7%91%E5%B9%BB%E8%BF%B7%E4%B9%9F%E4%BC%9A%E9%81%87%E5%88%B0%E8%82%AE%E8%84%8F%E9%82%AA%E6%81%B6%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%90%97%EF%BC%9F/"/>
+    <id>https://qidian.space/posts/%E6%B8%85%E7%BA%AF%E6%AD%A3%E4%B9%89%E7%A7%91%E5%B9%BB%E8%BF%B7%E4%B9%9F%E4%BC%9A%E9%81%87%E5%88%B0%E8%82%AE%E8%84%8F%E9%82%AA%E6%81%B6%E8%B5%84%E6%9C%AC%E5%AE%B6%E5%90%97%EF%BC%9F/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -475,17 +475,17 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="杂谈" scheme="https://qidiankepukehuan.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://qidian.space/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>疫情封锁期间对外部世界的回忆——澳大利亚专业科幻书店太空时代图书的奇妙之处</title>
-    <link href="https://qidiankepukehuan.github.io/posts/%E7%96%AB%E6%83%85%E5%B0%81%E9%94%81%E6%9C%9F%E9%97%B4%E5%AF%B9%E5%A4%96%E9%83%A8%E4%B8%96%E7%95%8C%E7%9A%84%E5%9B%9E%E5%BF%86%E2%80%94%E2%80%94%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E4%B8%93%E4%B8%9A%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%BA%97%E5%A4%AA%E7%A9%BA%E6%97%B6%E4%BB%A3%E5%9B%BE%E4%B9%A6%E7%9A%84%E5%A5%87%E5%A6%99%E4%B9%8B%E5%A4%84/"/>
-    <id>https://qidiankepukehuan.github.io/posts/%E7%96%AB%E6%83%85%E5%B0%81%E9%94%81%E6%9C%9F%E9%97%B4%E5%AF%B9%E5%A4%96%E9%83%A8%E4%B8%96%E7%95%8C%E7%9A%84%E5%9B%9E%E5%BF%86%E2%80%94%E2%80%94%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E4%B8%93%E4%B8%9A%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%BA%97%E5%A4%AA%E7%A9%BA%E6%97%B6%E4%BB%A3%E5%9B%BE%E4%B9%A6%E7%9A%84%E5%A5%87%E5%A6%99%E4%B9%8B%E5%A4%84/</id>
+    <link href="https://qidian.space/posts/%E7%96%AB%E6%83%85%E5%B0%81%E9%94%81%E6%9C%9F%E9%97%B4%E5%AF%B9%E5%A4%96%E9%83%A8%E4%B8%96%E7%95%8C%E7%9A%84%E5%9B%9E%E5%BF%86%E2%80%94%E2%80%94%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E4%B8%93%E4%B8%9A%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%BA%97%E5%A4%AA%E7%A9%BA%E6%97%B6%E4%BB%A3%E5%9B%BE%E4%B9%A6%E7%9A%84%E5%A5%87%E5%A6%99%E4%B9%8B%E5%A4%84/"/>
+    <id>https://qidian.space/posts/%E7%96%AB%E6%83%85%E5%B0%81%E9%94%81%E6%9C%9F%E9%97%B4%E5%AF%B9%E5%A4%96%E9%83%A8%E4%B8%96%E7%95%8C%E7%9A%84%E5%9B%9E%E5%BF%86%E2%80%94%E2%80%94%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E4%B8%93%E4%B8%9A%E7%A7%91%E5%B9%BB%E4%B9%A6%E5%BA%97%E5%A4%AA%E7%A9%BA%E6%97%B6%E4%BB%A3%E5%9B%BE%E4%B9%A6%E7%9A%84%E5%A5%87%E5%A6%99%E4%B9%8B%E5%A4%84/</id>
     <published>2025-04-30T16:00:00.000Z</published>
     <updated>2025-07-31T04:09:57.794Z</updated>
     
@@ -499,12 +499,12 @@
     
     
     
-    <category term="引力波" scheme="https://qidiankepukehuan.github.io/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
+    <category term="引力波" scheme="https://qidian.space/categories/%E5%BC%95%E5%8A%9B%E6%B3%A2/"/>
     
     
-    <category term="翻译" scheme="https://qidiankepukehuan.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    <category term="翻译" scheme="https://qidian.space/tags/%E7%BF%BB%E8%AF%91/"/>
     
-    <category term="世界科幻" scheme="https://qidiankepukehuan.github.io/tags/%E4%B8%96%E7%95%8C%E7%A7%91%E5%B9%BB/"/>
+    <category term="世界科幻" scheme="https://qidian.space/tags/%E4%B8%96%E7%95%8C%E7%A7%91%E5%B9%BB/"/>
     
   </entry>
   
