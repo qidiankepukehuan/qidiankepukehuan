@@ -20,6 +20,14 @@ title: 友情链接
     </div>
   </a>
 
+  <a class="link-item" href="https://gpabooks.github.io" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/上海交大.png" alt="">
+    <div class="link-info">
+      <div class="link-name">上海交大会刊GPA</div>
+      <div class="link-descr">我来，我看，我叙事！</div>
+    </div>
+  </a>
+
 </div>
 
 <style>
