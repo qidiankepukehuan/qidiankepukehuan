@@ -145,6 +145,8 @@ posts:
       enable: true # 是否启用
       list_number: true # 显示数字标号
 
+pjax: false
+
 # 访问数量统计
 visit_count:
   enable_at: []
