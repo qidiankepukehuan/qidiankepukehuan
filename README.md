@@ -30,7 +30,7 @@
 - **想改进功能** → 参考 https://github.com/Candinya/Kratos-Rebirth
 
 ## 🏗️ 本地开发
-我们建议你建议使用 VSCode 编辑器
+我们建议你使用 VSCode 编辑器
 <br>
 https://code.visualstudio.com/
 1. 克隆仓库
