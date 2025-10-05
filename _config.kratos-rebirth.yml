@@ -36,6 +36,9 @@ nav:
     - label: 搜索
       url: /search/
       icon: search
+    - label: 投稿
+      url: /contribute/
+      icon: pencil
 
 # Footer 页脚配置
 footer:
