@@ -123,8 +123,4 @@ title: 友情链接
     html[data-theme="dark"] body {
         background: #121212;
     }
-    
-    html[data-theme="dark"] .page-title {
-        color: #f0f0f0;
-    }
 </style>
