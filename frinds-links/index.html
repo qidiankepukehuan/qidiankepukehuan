@@ -19,18 +19,18 @@
   
     <meta name="keywords" content="科普,科幻,社团" />
   
-  <meta name="description" content="中文科幻数据库       我们见证，我们记录，我们讲述                             零重力科幻       科幻迷的聚集地，创作者的新手村！                             上海交大会刊GPA       我来，我看，我叙事！             .friend-links-container {">
+  <meta name="description" content="中文科幻数据库       我们见证，我们记录，我们讲述                             零重力科幻       科幻迷的聚集地，创作者的新手村！                             上海交大会刊GPA       我来，我看，我叙事！                 &#x2F;* 基础样式 *&#x2F;     .friend">
 <meta property="og:type" content="website">
 <meta property="og:title" content="友情链接">
 <meta property="og:url" content="https://qidian.space/frinds-links/index.html">
 <meta property="og:site_name" content="奇点科普科幻协会">
-<meta property="og:description" content="中文科幻数据库       我们见证，我们记录，我们讲述                             零重力科幻       科幻迷的聚集地，创作者的新手村！                             上海交大会刊GPA       我来，我看，我叙事！             .friend-links-container {">
+<meta property="og:description" content="中文科幻数据库       我们见证，我们记录，我们讲述                             零重力科幻       科幻迷的聚集地，创作者的新手村！                             上海交大会刊GPA       我来，我看，我叙事！                 &#x2F;* 基础样式 *&#x2F;     .friend">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qidian.space/photos/friend-links/%E4%B8%AD%E6%96%87%E7%A7%91%E5%B9%BB%E6%95%B0%E6%8D%AE%E5%BA%93.png">
 <meta property="og:image" content="https://qidian.space/photos/friend-links/%E9%9B%B6%E9%87%8D%E5%8A%9B%E7%A7%91%E5%B9%BB.png">
 <meta property="og:image" content="https://qidian.space/photos/friend-links/%E4%B8%8A%E6%B5%B7%E4%BA%A4%E5%A4%A7.png">
-<meta property="article:published_time" content="2025-09-28T07:10:47.669Z">
-<meta property="article:modified_time" content="2025-09-28T07:10:47.669Z">
+<meta property="article:published_time" content="2025-10-07T11:07:11.233Z">
+<meta property="article:modified_time" content="2025-10-07T11:07:11.233Z">
 <meta property="article:author" content="奇点科普科幻协会">
 <meta property="article:tag" content="社团">
 <meta property="article:tag" content="科幻">
@@ -242,46 +242,102 @@
 </div>
 
 <style>
-.friend-links-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-.link-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.8);
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.link-item:hover {
-  background: rgba(255,255,255,1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.link-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-  object-fit: cover;
-}
-.link-info {
-  flex: 1;
-}
-.link-name {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #333;
-}
-.link-descr {
-  color: #666;
-  font-size: 0.9em;
-  margin-top: 2px;
-}
+    /* 基础样式 */
+    .friend-links-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .link-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .link-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 1);
+    }
+    
+    .link-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    
+    .link-info {
+        flex: 1;
+    }
+    
+    .link-name {
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 4px;
+    }
+    
+    .link-descr {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    /* 夜间模式样式 */
+    html[data-theme="dark"] .link-item {
+        background: rgba(30, 30, 40, 0.85);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    html[data-theme="dark"] .link-item:hover {
+        background: rgba(40, 40, 50, 0.95);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    html[data-theme="dark"] .link-name {
+        color: #f0f0f0;
+    }
+    
+    html[data-theme="dark"] .link-descr {
+        color: #aaa;
+    }
+    
+    .theme-toggle i {
+        font-size: 24px;
+        color: #333;
+    }
+    
+    html[data-theme="dark"] .theme-toggle i {
+        color: #f0f0f0;
+    }
+    
+    /* 页面背景 */
+    body {
+        background: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        transition: background 0.3s ease;
+    }
+    
+    html[data-theme="dark"] body {
+        background: #121212;
+    }
+    
+    html[data-theme="dark"] .page-title {
+        color: #f0f0f0;
+    }
 </style>
 </div>
         </div>
@@ -303,7 +359,7 @@
             
             <div class="footer-tag clearfix">
                 <div class="pull-date">
-                    <time datetime="2025-09-28T07:10:47.669Z" itemprop="dateModified">最后编辑：2025-09-28</time>
+                    <time datetime="2025-10-07T11:07:11.233Z" itemprop="dateModified">最后编辑：2025-10-07</time>
                 </div>
             </div>
         </footer>
