@@ -31,44 +31,100 @@ title: 友情链接
 </div>
 
 <style>
-.friend-links-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-.link-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.8);
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.link-item:hover {
-  background: rgba(255,255,255,1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.link-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-  object-fit: cover;
-}
-.link-info {
-  flex: 1;
-}
-.link-name {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #333;
-}
-.link-descr {
-  color: #666;
-  font-size: 0.9em;
-  margin-top: 2px;
-}
+    /* 基础样式 */
+    .friend-links-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .link-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .link-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 1);
+    }
+    
+    .link-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    
+    .link-info {
+        flex: 1;
+    }
+    
+    .link-name {
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 4px;
+    }
+    
+    .link-descr {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    /* 夜间模式样式 */
+    html[data-theme="dark"] .link-item {
+        background: rgba(30, 30, 40, 0.85);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    html[data-theme="dark"] .link-item:hover {
+        background: rgba(40, 40, 50, 0.95);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    html[data-theme="dark"] .link-name {
+        color: #f0f0f0;
+    }
+    
+    html[data-theme="dark"] .link-descr {
+        color: #aaa;
+    }
+    
+    .theme-toggle i {
+        font-size: 24px;
+        color: #333;
+    }
+    
+    html[data-theme="dark"] .theme-toggle i {
+        color: #f0f0f0;
+    }
+    
+    /* 页面背景 */
+    body {
+        background: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        transition: background 0.3s ease;
+    }
+    
+    html[data-theme="dark"] body {
+        background: #121212;
+    }
+    
+    html[data-theme="dark"] .page-title {
+        color: #f0f0f0;
+    }
 </style>
