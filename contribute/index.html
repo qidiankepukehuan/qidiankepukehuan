@@ -462,7 +462,7 @@
                 }
 
                 function insertImage(name) {
-                    const path = `./posts/${title || "未命名文章"}/${name}`;
+                    const path = `../photos/${title || "未命名文章"}/${name}`;
                     editorRef.current.insertText(`![${"请输入图注"}](${path})\n`);
                 }
 
