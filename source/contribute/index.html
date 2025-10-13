@@ -656,6 +656,7 @@
                         setToastMsg("网络请求失败，请检查连接或稍后重试。");
                         setToastType("error");
                     }
+                    setTimeout(() => setToastMsg(""), 3000);
                 }
 
                 async function handleSubmit() {
