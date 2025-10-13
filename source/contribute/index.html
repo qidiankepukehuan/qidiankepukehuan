@@ -499,6 +499,22 @@
             :host([data-theme="dark"]) .ProseMirror {
                 background: #ffffff !important;
                 color: #000000 !important;
+            }
+            .toast-info {
+              position: fixed;
+              right: 20px;
+              bottom: 20px;
+              padding: 10px 20px;
+              border-radius: 5px;
+              color: #fff;
+              z-index: 9999;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+              background: rgba(13, 110, 253, 0.8);
+            }
+            :host([data-theme="dark"]) .toast-info {
+              background: rgba(13, 110, 253, 0.3);
+              box-shadow: 0 4px 8px rgba(0,0,0,0.6);
             }`;
             shadow.appendChild(styleCustom);
 
@@ -515,6 +531,7 @@
                 const [tags, setTags] = useState([]);
                 const [cover, setCover] = useState(null);
                 const [images, setImages] = useState([]);
+                const [toastMsg, setToastMsg] = useState("");
                 const editorRef = useRef(null);
 
                 useEffect(() => {
@@ -633,6 +650,7 @@
                     };
 
                     console.log(payload);
+                    setToastMsg("已投送至服务器，请耐心等待");
 
                     try {
                         const res = await fetch(`${backend_url}/submit`, {
@@ -662,10 +680,14 @@
                         console.error(err);
                         alert("网络请求失败，请检查连接或稍后重试。");
                     }
+
+                    // 2~3 秒后自动消失
+                    setTimeout(() => setToastMsg(""), 3000);
                 }
 
                 return (
                     <div>
+                        {toastMsg && ( <div className="toast-info">{toastMsg} </div>)}
                         <div className="main-layout">
                             <div className="card-section">
                                 <div className="mb-3">
