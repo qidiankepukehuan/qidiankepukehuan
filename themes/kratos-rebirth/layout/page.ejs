@@ -10,9 +10,11 @@
             <div itemprop="articleBody"><%- page.content %></div>
         </div>
         <% if (typeof page.show_copyright !== 'undefined' ? page.show_copyright : theme.copyright_notice.in_page.enable_at.includes("page")) { %>
-            <div class="kratos-copyright text-center clearfix">
-                <span itemprop="copyrightNotice"><%- page.copyright_notice_template || theme.copyright_notice.in_page.template %></span>
-            </div>
+            <% if (page.copyright !== false) { %>
+                <div class="kratos-copyright text-center clearfix">
+                    <span itemprop="copyrightNotice"><%- page.copyright_notice_template || theme.copyright_notice.in_page.template %></span>
+                </div>
+            <% } %>
         <% } %>
         <footer class="kratos-entry-footer clearfix">
             <% const donateEnable = page.donate !== false && theme.pages.donate && theme.donate.enable; %>
