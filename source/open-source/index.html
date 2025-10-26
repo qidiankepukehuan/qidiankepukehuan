@@ -603,37 +603,49 @@
                         setTimeout(() => setToastMsg(""), 3000);
                         return;
                     }
+
                     setToastMsg("正在验证...");
                     setToastType("info");
+
                     try {
                         const res = await fetch(`${backend_url}/share/get_file`, {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
-                                name,
+                                // ← 对齐后端字段
+                                applicant: name,
+                                apply_for: selectedFile,
                                 email,
                                 email_code: emailCode,
-                                file_name: selectedFile,
                             }),
                         });
-                        if (res.ok) {
-                            const blob = await res.blob();
-                            const url = window.URL.createObjectURL(blob);
-                            const a = document.createElement("a");
-                            a.href = url;
-                            a.download = selectedFile;
-                            a.click();
-                            setToastMsg("文件已开始传输！");
-                            setToastType("success");
+
+                        // 兼容两种返回：统一封装的 ApiResponse 或纯文本
+                        const contentType = res.headers.get("content-type") || "";
+                        let payload = null;
+                        if (contentType.includes("application/json")) {
+                            payload = await res.json(); // 预期形如 { code: 200, message: "...", data: ... }
                         } else {
                             const text = await res.text();
-                            setToastMsg("验证失败: " + text);
+                            payload = { code: res.ok ? 200 : res.status, message: text };
+                        }
+
+                        if (res.ok && (payload?.code === 200 || payload?.success === true)) {
+                            setToastMsg("验证成功，下载链接已发送至您的邮箱（24小时内有效）");
+                            setToastType("success");
+                            // 不再做本地下载，按后端逻辑通过邮件发送
+                        } else {
+                            const msg =
+                                payload?.message ||
+                                `请求失败（HTTP ${res.status}）`;
+                            setToastMsg("验证失败: " + msg);
                             setToastType("error");
                         }
                     } catch (e) {
-                        setToastMsg("网络请求失败" + e);
+                        setToastMsg("网络请求失败：" + (e?.message || e));
                         setToastType("error");
                     }
+
                     setTimeout(() => setToastMsg(""), 3000);
                 }
 
@@ -678,7 +690,7 @@
                                     <input type="email" className="form-control custom-border" value={email} onChange={e => setEmail(e.target.value)} />
                                     <button className="btn btn-outline-primary btn-sm blue-border" type="button" onClick={sendEmailCode}>发送验证码</button>
                                     <input type="text" className="form-control custom-border" placeholder="验证码" value={emailCode} onChange={e => setEmailCode(e.target.value)} />
-                                    <button className="btn btn-outline-primary btn-sm blue-border" type="button" onClick={handleDownload}>验证并获取</button>
+                                    <button className="btn btn-outline-primary btn-sm blue-border" type="button" onClick={handleDownload}>验证并发送到邮箱</button>
                                 </div>
                             </div>
                         </div>
@@ -700,7 +712,7 @@
                                 <ul>
                                     <li>点击<strong>“发送验证码”</strong>后，系统将向您的邮箱发送一封验证邮件。</li>
                                     <li>前往邮箱查收验证码，并填写至“验证码”输入框中。</li>
-                                    <li>点击<strong>“验证并获取文件”</strong>，系统将在验证成功后将文件发送至您的邮箱。</li>
+                                    <li>点击<strong>“验证并发送到邮箱”</strong>，系统将在验证成功后将文件发送至您的邮箱。</li>
                                 </ul>
                             </div>
 
