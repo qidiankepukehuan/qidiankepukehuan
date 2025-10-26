@@ -135,9 +135,12 @@ date: 2025-10-26 20:15:58
         transition: all 0.3s ease;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       }
-      .toast-info.success { background: #28a745; }
-      .toast-info.error { background: #dc3545; }
-      .toast-info.info { background: #17a2b8; }
+      .toast-info.info { background: rgba(13,110,253,.85); }
+      .toast-info.success { background: rgba(25,135,84,.9); }
+      .toast-info.error { background: rgba(220,53,69,.9); }
+      :host([data-theme="dark"]) .toast-info.info { background: rgba(13,110,253,.35); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
+      :host([data-theme="dark"]) .toast-info.success { background: rgba(25,135,84,.55); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
+      :host([data-theme="dark"]) .toast-info.error { background: rgba(220,53,69,.6); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
     `;
 
     shadow.appendChild(linkBootstrap);
