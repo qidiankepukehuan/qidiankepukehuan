@@ -199,7 +199,7 @@
         <div id="kratos-blog-post">
             <div class="container">
                 <div id="main" class="row">
-                    <div id="app" class="contribute-page">
+                    <div id="app-contribute" class="contribute-page">
 
                     </div>
                 </div>
@@ -835,7 +835,7 @@
 
     // 挂载 ShadowApp
     function initApp() {
-        ReactDOM.createRoot(document.getElementById("app")).render(<ShadowApp />);
+        ReactDOM.createRoot(document.getElementById("app-contribute")).render(<ShadowApp />);
     }
 
     (function waitForThemeToggle() {
@@ -871,7 +871,7 @@
 
     window.addEventListener("pjax:complete", initApp);
 
-    ReactDOM.createRoot(document.getElementById("app")).render(<ShadowApp />);
+    ReactDOM.createRoot(document.getElementById("app-contribute")).render(<ShadowApp />);
 </script>
 
 

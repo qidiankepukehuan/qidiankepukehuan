@@ -199,7 +199,7 @@
         <div id="kratos-blog-post">
             <div class="container">
                 <div id="main" class="row">
-                    <div id="app" class="contribute-page">
+                    <div id="app-open-source" class="open-source-page">
 
                     </div>
                 </div>
@@ -500,7 +500,7 @@
                 }
 
                 return (
-                    <div className="main-layout">
+                    <div className="main-layout-open-source">
                         {toastMsg && (
                             <div className={`toast-info ${toastType}`}>{toastMsg}</div>
                         )}
@@ -570,7 +570,7 @@
 
                         {/* 右侧指南 */}
                         <div className="guide">
-                            <h5>📘 文件分享说明</h5>
+                            <h5>文件分享说明</h5>
                             <p>欢迎使用奇点文件分享系统。本系统用于安全地分发协会的开源或内部文件。</p>
                             <ol>
                                 <li>首先填写您的姓名与邮箱地址。</li>
@@ -580,9 +580,9 @@
                                 <li>点击“验证并获取文件”，验证通过后将自动开始下载。</li>
                             </ol>
                             <p>
-                                ⚠️ 如果未收到验证码邮件，请检查垃圾邮箱或稍后重试。
+                                如果未收到验证码邮件，请检查垃圾邮箱或稍后重试。
                                 <br />
-                                📮 如有问题，请联系：<code>tsblydyzbjb@qidian.space</code>
+                                如有问题，请联系：<code>tsblydyzbjb@qidian.space</code>
                             </p>
                         </div>
                     </div>
@@ -597,7 +597,7 @@
 
     // 挂载 ShadowApp
     function initApp() {
-        ReactDOM.createRoot(document.getElementById("app")).render(<ShadowApp />);
+        ReactDOM.createRoot(document.getElementById("app-open-source")).render(<ShadowApp />);
     }
 
     (function waitForThemeToggle() {
@@ -633,7 +633,7 @@
 
     window.addEventListener("pjax:complete", initApp);
 
-    ReactDOM.createRoot(document.getElementById("app")).render(<ShadowApp />);
+    ReactDOM.createRoot(document.getElementById("app-open-source")).render(<ShadowApp />);
 </script>
 
 
