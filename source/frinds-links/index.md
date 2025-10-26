@@ -29,7 +29,7 @@ title: 友情链接
   </a>
 
   <a class="link-item" href="https://hubingsf.cn/" target="_blank">
-    <img class="link-avatar" src="../photos/friend-links/合工大.jpg" alt="">
+    <img class="link-avatar" src="../photos/friend-links/合工大.png" alt="">
     <div class="link-info">
       <div class="link-name">合工大斛兵群星科幻协会 </div>
       <div class="link-descr">天马行空的幻想咖啡厅！</div>
