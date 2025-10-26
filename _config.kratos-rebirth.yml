@@ -39,6 +39,9 @@ nav:
     - label: 投稿
       url: /contribute/
       icon: pencil
+    - label: 资源
+      url: /open-source/
+      icon: cubes
 
 # Footer 页脚配置
 footer:

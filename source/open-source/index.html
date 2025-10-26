@@ -348,7 +348,7 @@
 <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
 
 <script type="text/babel">
-    const backend_url = "https://contribute.qidian.space"
+    const backend_url = "https://contribute.qidian.space";
     const { useState, useEffect, useRef } = React;
 
     function ShadowApp() {
@@ -356,297 +356,85 @@
 
         useEffect(() => {
             const shadow = hostRef.current.attachShadow({ mode: "open" });
-
             const host = hostRef.current;
-            host.setAttribute('data-has-shadow', '');
+            host.setAttribute("data-has-shadow", "");
 
-            // 创建样式节点
-            // 1. 引入外部 CSS
-            const linkBootstrap = document.createElement('link');
-            linkBootstrap.rel = 'stylesheet';
-            linkBootstrap.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+            // 样式
+            const linkBootstrap = document.createElement("link");
+            linkBootstrap.rel = "stylesheet";
+            linkBootstrap.href =
+                "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
             shadow.appendChild(linkBootstrap);
 
-            const linkToastUI = document.createElement('link');
-            linkToastUI.rel = 'stylesheet';
-            linkToastUI.href = 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css';
-            shadow.appendChild(linkToastUI);
-
-            // 2. 自定义样式
-            const styleCustom = document.createElement('style');
+            const styleCustom = document.createElement("style");
             styleCustom.textContent = `
-            .main-layout {
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                gap: 20px;
-                margin-bottom: 20px;
-            }
-
-            .guide, .card-section {
-                padding: 15px;
-                background: #fff;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                margin-bottom: 20px;
-                transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-            }
-
-            .tag {
-                display: inline-flex;
-                align-items: center;
-                margin: 3px;
-                padding: 4px 8px;
-                background: #51aded;
-                color: #fff;
-                border-radius: 5px;
-                font-size: 0.9rem;
-            }
-
-            .tag .remove {
-                margin-left: 6px;
-                cursor: pointer;
-                font-weight: bold;
-                color: #fff;
-                transition: color 0.2s ease;
-            }
-
-            .tag .remove:hover { color: #ffdddd; }
-
-            .preview-img {
-                max-width: 120px;
-                margin: 5px;
-                display: inline-block;
-                text-align: center;
-                background: #f8f9fa;
-                padding: 5px;
-                border-radius: 5px;
-                transition: background 0.3s ease;
-            }
-
-            .preview-img img {
-                max-width: 100%;
-                border-radius: 4px;
-            }
-
-            .img-btns {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 5px;
-            }
-
-            .email-group {
-                display: flex;
-                gap: 5px;
-                margin-bottom: 5px;
-            }
-
-            .email-group input {
-                flex: 1;
-            }
-
-            .btn-sm {
-                font-size: 0.8rem;
-                padding: 0.25rem 0.5rem;
-            }
-
-            .custom-border {
-                border: 1px solid #CECECE;
-                border-radius: 5px;
-                transition: border-color 0.3s ease;
-            }
-
-            .blue-border {
-                border: 1px solid #0d6efd;
-                border-radius: 5px;
-            }
-
-            .red-border {
-                border: 1px solid #dc3545;
-                border-radius: 5px;
-            }
-
-            :host([data-theme="dark"]) .guide,
-            :host([data-theme="dark"]) .card-section {
-                background: #1e1e28;
-                border-color: #333;
-                color: #e0e0e0;
-            }
-
-            :host([data-theme="dark"]) .tag {
-                background: #2979ff;
-                color: #fff;
-            }
-
-            :host([data-theme="dark"]) .tag .remove {
-                color: #fff;
-            }
-
-            :host([data-theme="dark"]) .tag .remove:hover {
-                color: #ff9999;
-            }
-
-            :host([data-theme="dark"]) .preview-img {
-                background: #2a2a35;
-            }
-
-            :host([data-theme="dark"]) .custom-border {
-                border-color: #444;
-            }
-
-            :host([data-theme="dark"]) .blue-border {
-                border-color: #66aaff;
-            }
-
-            :host([data-theme="dark"]) .red-border {
-                border-color: #ff6677;
-            }
-
-            :host([data-theme="dark"]) {
-                background: #121212;
-                color: #e0e0e0;
-            }
-            :host([data-theme="dark"]) .toastui-editor-md,
-            :host([data-theme="dark"]) .toastui-editor-md-container,
-            :host([data-theme="dark"]) .toastui-editor-md-preview,
-            :host([data-theme="dark"]) .ProseMirror {
-                background: #ffffff !important;
-                color: #000000 !important;
-            }
-            .toast-info {
-              position: fixed;
-              right: 20px;
-              bottom: 20px;
-              padding: 10px 20px;
-              border-radius: 5px;
-              color: #fff;
-              z-index: 9999;
-              transition: all 0.3s ease;
-              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
-            .toast-info.info {
-              background: rgba(13, 110, 253, 0.8); /* 蓝色 */
-            }
-            .toast-info.success {
-                background: rgba(25, 135, 84, 0.9); /* 绿色 */
-            }
-            .toast-info.error {
-              background: rgba(220, 53, 69, 0.85); /* 红色 */
-            }
-            :host([data-theme="dark"]) .toast-info.info {
-              background: rgba(13, 110, 253, 0.3);
-              box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-            }
-            :host([data-theme="dark"]) .toast-info.success {
-                background: rgba(25, 135, 84, 0.6);
-                box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-            }
-            :host([data-theme="dark"]) .toast-info.error {
-              background: rgba(220, 53, 69, 0.6);
-              box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-            }`;
+      .main-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 1000px;
+      }
+      .card-section, .guide {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        border: 1px solid #ddd;
+      }
+      .guide {
+        line-height: 1.8;
+      }
+      .toast-info {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #fff;
+        z-index: 9999;
+        transition: all 0.3s ease;
+      }
+      .toast-info.info { background: rgba(13,110,253,0.8); }
+      .toast-info.success { background: rgba(25,135,84,0.9); }
+      .toast-info.error { background: rgba(220,53,69,0.85); }
+    `;
             shadow.appendChild(styleCustom);
 
-            // 创建 React 容器
             const container = document.createElement("div");
             shadow.appendChild(container);
 
-            // 定义 App 内部组件
             function App() {
-                const [title, setTitle] = useState("");
-                const [author, setAuthor] = useState("");
+                const [name, setName] = useState("");
                 const [email, setEmail] = useState("");
                 const [emailCode, setEmailCode] = useState("");
-                const [tags, setTags] = useState([]);
-                const [cover, setCover] = useState(null);
-                const [images, setImages] = useState([]);
+                const [fileList, setFileList] = useState([]);
+                const [selectedFile, setSelectedFile] = useState("");
                 const [toastMsg, setToastMsg] = useState("");
                 const [toastType, setToastType] = useState("info");
-                const editorRef = useRef(null);
 
                 useEffect(() => {
-                    const editor = new toastui.Editor({
-                        el: container.querySelector('#editor'),
-                        height: '400px',
-                        initialEditType: 'markdown',
-                        previewStyle: 'vertical',
-                        initialValue: '# 请输入正文'
-                    });
-                    editorRef.current = editor;
-                }, []);
-
-                // 文件转 base64
-                function fileToBase64(file) {
-                    return new Promise((resolve, reject) => {
-                        const reader = new FileReader();
-                        reader.onload = () => resolve(reader.result.split(",")[1]); // 去掉 data:image/...;base64,
-                        reader.onerror = reject;
-                        reader.readAsDataURL(file);
-                    });
-                }
-
-                async function toWebp(file) {
-                    const options = { fileType: "image/webp", maxWidthOrHeight: 1920, initialQuality: 0.8 };
-                    return await imageCompression(file, options);
-                }
-
-                async function handleCoverChange(e) {
-                    const file = e.target.files[0];
-                    if (!file) return;
-                    const webpFile = await toWebp(file);
-                    const base64 = await fileToBase64(webpFile);
-                    setCover({ name: "cover.webp", base64 });
-                }
-
-                async function handleImagesChange(e) {
-                    const files = Array.from(e.target.files);
-                    const result = [];
-
-                    // 已有图片数量，继续往后排
-                    let startIndex = images.length + 1;
-
-                    for (let i = 0; i < files.length; i++) {
-                        const file = files[i];
-                        const webpFile = await toWebp(file);
-                        const base64 = await fileToBase64(webpFile);
-                        const name = `${startIndex + i}.webp`; // 用序号命名
-                        result.push({ name, base64 });
-                    }
-
-                    // 合并后，重新按名字中的数字排序
-                    const newImages = [...images, ...result].sort((a, b) => {
-                        const numA = parseInt(a.name);
-                        const numB = parseInt(b.name);
-                        return numA - numB;
-                    });
-
-                    setImages(newImages);
-                }
-
-                function insertImage(name) {
-                    const path = `../photos/${title || "未命名文章"}/${name}`;
-                    editorRef.current.insertText(`![${"请输入图注"}](${path})\n`);
-                }
-
-                function removeImage(name) {
-                    setImages(images.filter(img => img.name !== name));
-                }
-
-                function handleTagKeyDown(e) {
-                    if (e.key === "Enter") {
-                        e.preventDefault();
-                        const value = e.target.value.trim();
-                        if (value) {
-                            setTags([...tags, value]);
-                            e.target.value = "";
+                    async function fetchFiles() {
+                        try {
+                            const res = await fetch(`${backend_url}/share/list_file`);
+                            const data = await res.json();
+                            if (data.code === 200) setFileList(data.data);
+                            else throw new Error(data.message);
+                        } catch {
+                            setToastMsg("无法获取文件列表");
+                            setToastType("error");
+                            setTimeout(() => setToastMsg(""), 3000);
                         }
                     }
-                }
-
-                function removeTag(tag) {
-                    setTags(tags.filter(t => t !== tag));
-                }
+                    fetchFiles();
+                }, []);
 
                 async function sendEmailCode() {
+                    if (!email) {
+                        setToastMsg("请先填写邮箱");
+                        setToastType("error");
+                        setTimeout(() => setToastMsg(""), 3000);
+                        return;
+                    }
                     setToastMsg("正在发送验证码...");
                     setToastType("info");
                     try {
@@ -663,170 +451,144 @@
                             setToastMsg("发送失败: " + text);
                             setToastType("error");
                         }
-                    } catch (err) {
-                        console.error(err);
-                        setToastMsg("网络请求失败，请检查连接或稍后重试。");
+                    } catch {
+                        setToastMsg("网络错误，请稍后重试");
                         setToastType("error");
                     }
                     setTimeout(() => setToastMsg(""), 3000);
                 }
 
-                async function handleSubmit() {
-                    const content = editorRef.current.getMarkdown();
-                    const payload = {
-                        title,
-                        author,
-                        email,
-                        email_code: emailCode,  // 注意这里字段名要和后端 SubmissionRequest 对应
-                        tags,
-                        cover,
-                        images,
-                        content,
-                    };
-
-                    console.log(payload);
-                    setToastMsg("正在提交...");
+                async function handleDownload() {
+                    if (!name || !email || !emailCode || !selectedFile) {
+                        setToastMsg("请完整填写信息");
+                        setToastType("error");
+                        setTimeout(() => setToastMsg(""), 3000);
+                        return;
+                    }
+                    setToastMsg("正在验证...");
                     setToastType("info");
-
                     try {
-                        const res = await fetch(`${backend_url}/submit`, {
+                        const res = await fetch(`${backend_url}/share/get_file`, {
                             method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(payload),
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                name,
+                                email,
+                                email_code: emailCode,
+                                file_name: selectedFile,
+                            }),
                         });
-
                         if (res.ok) {
-                            setToastMsg("投稿成功！");
+                            const blob = await res.blob();
+                            const url = window.URL.createObjectURL(blob);
+                            const a = document.createElement("a");
+                            a.href = url;
+                            a.download = selectedFile;
+                            a.click();
+                            setToastMsg("文件已开始下载！");
                             setToastType("success");
-                            // 提交成功后可以清空表单
-                            setTitle("");
-                            setAuthor("");
-                            setEmail("");
-                            setEmailCode("");
-                            setTags([]);
-                            setCover(null);
-                            setImages([]);
-                            editorRef.current.setMarkdown("# 请输入正文");
                         } else {
                             const text = await res.text();
-                            setToastMsg("投稿失败: " + text);
+                            setToastMsg("验证失败: " + text);
                             setToastType("error");
                         }
-                    } catch (err) {
-                        console.error(err);
-                        setToastMsg("网络请求失败，请检查连接或稍后重试。");
+                    } catch {
+                        setToastMsg("网络请求失败");
                         setToastType("error");
                     }
-
-                    // 2~3 秒后自动消失
                     setTimeout(() => setToastMsg(""), 3000);
                 }
 
                 return (
-                    <div>
+                    <div className="main-layout">
                         {toastMsg && (
-                            <div className={`toast-info ${toastType}`}>
-                                {toastMsg}
-                            </div>
+                            <div className={`toast-info ${toastType}`}>{toastMsg}</div>
                         )}
-                        <div className="main-layout">
-                            <div className="card-section">
-                                <div className="mb-3">
-                                    <label className="form-label ">文章标题</label>
-                                    <input type="text" className="form-control custom-border" value={title} onChange={e => setTitle(e.target.value)} />
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">作者名</label>
-                                    <input type="text" className="form-control custom-border" value={author} onChange={e => setAuthor(e.target.value)} />
-                                </div>
-                                <div className="mb-3">
-                                    <label className="form-label">作者邮箱</label>
-                                    <div className="email-group">
-                                        <input type="email" className="form-control custom-border" value={email} onChange={e => setEmail(e.target.value)} />
-                                        <button className="btn btn-outline-primary btn-sm blue-border" type="button" onClick={sendEmailCode}>发送验证码</button>
-                                        <input type="text" className="form-control custom-border" placeholder="验证码" value={emailCode} onChange={e => setEmailCode(e.target.value)} />
-                                        <button className="btn btn-outline-primary btn-sm blue-border" type="button" onClick={handleSubmit}>验证并提交</button>
-                                    </div>
-                                </div>
 
-                                <div className="mb-3">
-                                    <label className="form-label">标签</label>
-                                    <input type="text" className="form-control custom-border" placeholder="输入后回车添加" onKeyDown={handleTagKeyDown} />
-                                    <div className="mt-2">
-                                        {tags.map(tag => (
-                                            <span key={tag} className="tag">
-                                        {tag} <span className="remove" onClick={() => removeTag(tag)}>&times;</span>
-                                    </span>
-                                        ))}
-                                    </div>
-                                </div>
+                        {/* 左侧表单 */}
+                        <div className="card-section">
+                            <h4 className="mb-3 text-center">文件分享申请</h4>
+                            <div className="mb-3">
+                                <label className="form-label">申请人姓名</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
 
-                                <div className="mb-3">
-                                    <label className="form-label">封面图</label>
-                                    <input type="file" className="form-control custom-border" accept="image/*" onChange={handleCoverChange}/>
-                                    {cover && (
-                                        <div className="preview-img mt-2">
-                                            <img src={`data:image/webp;base64,${cover.base64}`} alt="cover" /><br/>cover.webp
-                                        </div>
-                                    )}
-                                </div>
+                            <div className="mb-3">
+                                <label className="form-label">选择文件</label>
+                                <select
+                                    className="form-select"
+                                    value={selectedFile}
+                                    onChange={(e) => setSelectedFile(e.target.value)}
+                                >
+                                    <option value="">请选择要申请的文件</option>
+                                    {fileList.map((file, i) => (
+                                        <option key={i} value={file}>
+                                            {file}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
 
-                                <div className="mb-3">
-                                    <label className="form-label">文章插图</label>
-                                    <input type="file" className="form-control custom-border" accept="image/*" multiple onChange={handleImagesChange}/>
-                                    <div className="mt-2 d-flex flex-wrap">
-                                        {images.map(img => (
-                                            <div key={img.name} className="preview-img">
-                                                <img src={`data:image/webp;base64,${img.base64}`} alt={img.name}/>
-                                                <div>{img.name}</div>
-                                                <div className="img-btns">
-                                                    <button className="btn btn-outline-primary btn-sm blue-border" onClick={() => insertImage(img.name)}>插入</button>
-                                                    <button className="btn btn-outline-danger btn-sm red-border" onClick={() => removeImage(img.name)}>删除</button>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                            <div className="mb-3">
+                                <label className="form-label">邮箱</label>
+                                <div className="input-group">
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <button
+                                        className="btn btn-outline-primary"
+                                        type="button"
+                                        onClick={sendEmailCode}
+                                    >
+                                        发送验证码
+                                    </button>
                                 </div>
                             </div>
 
-                            <div className="guide">
-                                <h5>投稿指南</h5>
-                                <div>
-                                    <strong>一、投稿前请确认</strong>
-                                    <ul>
-                                        <li>请务必在填写完所有内容后，再点击<strong>“发送验证码”</strong>与<strong>“验证并提交”</strong>提交投稿。</li>
-                                        <li>文章标题将用作系统内的文件夹名称，例如：<code>./posts/我的文章</code></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <strong>二、图片处理与插入</strong>
-                                    <ul>
-                                        <li>所有上传图片将自动转换为 <code>WebP</code> 格式。</li>
-                                        <li>推荐：上传后点击“插入”按钮将图片添加到编辑器（预览区不显示属正常，不影响发布）。</li>
-                                        <li>可选：直接复制粘贴插入图片（Base64 格式，可预览，但性能较差，不推荐）。</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <strong>三、投稿与后续</strong>
-                                    <ul>
-                                        <li>点击“投稿”后，系统需要约 <strong>20秒</strong> 进行处理，请耐心等待，切勿重复点击，以免造成重复提交。</li>
-                                        <li>投稿过程中如遇任何问题，请联系：<code>tsblydyzbjb@qidian.space</code></li>
-                                    </ul>
-                                </div>
+                            <div className="mb-3">
+                                <label className="form-label">验证码</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={emailCode}
+                                    onChange={(e) => setEmailCode(e.target.value)}
+                                />
                             </div>
+
+                            <button className="btn btn-primary w-100" onClick={handleDownload}>
+                                验证并获取文件
+                            </button>
                         </div>
 
-                        <div className="card-section">
-                            <label className="form-label">正文</label>
-                            <div id="editor"></div>
+                        {/* 右侧指南 */}
+                        <div className="guide">
+                            <h5>📘 文件分享说明</h5>
+                            <p>欢迎使用奇点文件分享系统。本系统用于安全地分发协会的开源或内部文件。</p>
+                            <ol>
+                                <li>首先填写您的姓名与邮箱地址。</li>
+                                <li>从下拉框中选择您希望获取的文件。</li>
+                                <li>点击“发送验证码”，系统将向您的邮箱发送一封邮件。</li>
+                                <li>在邮件中找到验证码，填入验证码输入框。</li>
+                                <li>点击“验证并获取文件”，验证通过后将自动开始下载。</li>
+                            </ol>
+                            <p>
+                                ⚠️ 如果未收到验证码邮件，请检查垃圾邮箱或稍后重试。
+                                <br />
+                                📮 如有问题，请联系：<code>tsblydyzbjb@qidian.space</code>
+                            </p>
                         </div>
                     </div>
                 );
             }
 
-            // 渲染到 shadow DOM
             ReactDOM.createRoot(container).render(<App />);
         }, []);
 
