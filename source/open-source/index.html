@@ -612,7 +612,6 @@
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
-                                // ← 对齐后端字段
                                 applicant: name,
                                 apply_for: selectedFile,
                                 email,
@@ -620,29 +619,25 @@
                             }),
                         });
 
-                        // 兼容两种返回：统一封装的 ApiResponse 或纯文本
                         const contentType = res.headers.get("content-type") || "";
                         let payload = null;
                         if (contentType.includes("application/json")) {
-                            payload = await res.json(); // 预期形如 { code: 200, message: "...", data: ... }
+                            payload = await res.json();
                         } else {
                             const text = await res.text();
                             payload = { code: res.ok ? 200 : res.status, message: text };
                         }
 
-                        if (res.ok && (payload?.code === 200 || payload?.success === true)) {
+                        if (res.ok && ((payload && payload.code === 200) || (payload && payload.success === true))) {
                             setToastMsg("验证成功，下载链接已发送至您的邮箱（24小时内有效）");
                             setToastType("success");
-                            // 不再做本地下载，按后端逻辑通过邮件发送
                         } else {
-                            const msg =
-                                payload?.message ||
-                                `请求失败（HTTP ${res.status}）`;
+                            const msg = (payload && payload.message) || `请求失败（HTTP ${res.status}）`;
                             setToastMsg("验证失败: " + msg);
                             setToastType("error");
                         }
                     } catch (e) {
-                        setToastMsg("网络请求失败：" + (e?.message || e));
+                        setToastMsg("网络请求失败：" + (e && e.message ? e.message : e));
                         setToastType("error");
                     }
 
@@ -657,7 +652,6 @@
 
                         {/* 左侧表单 */}
                         <div className="card-section">
-                            <h4 className="mb-3 text-center">文件分享申请</h4>
                             <div className="mb-3">
                                 <label className="form-label">申请人姓名</label>
                                 <input
