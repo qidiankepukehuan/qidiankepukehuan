@@ -31,8 +31,32 @@ title: 友情链接
   <a class="link-item" href="https://hubingsf.cn/" target="_blank">
     <img class="link-avatar" src="../photos/friend-links/合工大.png" alt="">
     <div class="link-info">
-      <div class="link-name">合工大斛兵群星科幻协会 </div>
+      <div class="link-name">斛兵群星科幻协会</div>
       <div class="link-descr">天马行空的幻想咖啡厅！</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMDgyMzg2NA==&scene=124#wechat_redirect" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/42号邮局.png" alt="">
+    <div class="link-info">
+      <div class="link-name">42号邮局</div>
+      <div class="link-descr">为你无处投递的科幻梦找一个归宿</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMDgyMzg2NA==&scene=124#wechat_redirect" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/川TUO.png" alt="">
+    <div class="link-info">
+      <div class="link-name">川TUO</div>
+      <div class="link-descr">四川给你一坨子！</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMDgyMzg2NA==&scene=124#wechat_redirect" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/河流公众号.png" alt="">
+    <div class="link-info">
+      <div class="link-name">宇宙尽头和牛馆</div>
+      <div class="link-descr">河流个人微信公众号</div>
     </div>
   </a>
 
@@ -42,12 +66,13 @@ title: 友情链接
     /* 基础样式 */
     .friend-links-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 20px;
         padding: 20px;
     }
     
     .link-item {
+        min-width: 0;  
         display: flex;
         align-items: center;
         padding: 15px;
@@ -57,6 +82,7 @@ title: 友情链接
         transition: all 0.3s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(0, 0, 0, 0.05);
+        gap: 10px;
     }
     
     .link-item:hover {
@@ -66,15 +92,17 @@ title: 友情链接
     }
     
     .link-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 15px;
-      object-fit: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0;
     }
     
     .link-info {
+        min-width: 0;
         flex: 1;
+        overflow-wrap: anywhere;
     }
     
     .link-name {
