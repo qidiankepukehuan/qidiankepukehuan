@@ -48,7 +48,20 @@
 
     // 载入＆pjax 重新挂载
     window.loadComments = loadComments;
-    // 添加初始加载和pjax事件监听
-    document.addEventListener('DOMContentLoaded', loadComments);
-    window.addEventListener('pjax:success', loadComments);
+
+    // 初始整页加载
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('[giscus] DOMContentLoaded -> loadComments');
+        loadComments();
+    });
+
+    window.addEventListener('pjax:complete', () => {
+        console.log('[giscus] window pjax:complete -> loadComments');
+        loadComments();
+    });
+
+    window.addEventListener('pjax:success', () => {
+        console.log('[giscus] window pjax:success -> loadComments');
+        loadComments();
+    });
 })();
