@@ -12,6 +12,7 @@ date: 2025-10-26 20:15:58
 <link rel="preconnect" href="https://uicdn.toast.com" /> 
 <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+<script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
 
 <script>
 (function () {
@@ -248,6 +249,24 @@ date: 2025-10-26 20:15:58
     });
     left.appendChild(gTags);
 
+    const gDocx = document.createElement("div");
+    gDocx.className = "mb-3";
+    gDocx.innerHTML = `
+      <label class="form-label">从 Word 导入</label>
+      <input type="file" class="form-control custom-border" accept=".docx,.doc" />
+      <div class="form-text">目前仅支持 .docx，会按原顺序导入文字和图片。</div>
+    `;
+    const docxInput = gDocx.querySelector('input[type="file"]');
+    docxInput.addEventListener("change", (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        handleDocxUpload(file);
+        // 选完一个之后清空，下次还能重新选
+        e.target.value = "";
+      }
+    });
+    left.appendChild(gDocx);
+
     function renderTags() {
       tagWrap.innerHTML = "";
       state.tags.forEach((t) => {
@@ -271,12 +290,33 @@ date: 2025-10-26 20:15:58
     gCover.className = "mb-3";
     gCover.innerHTML = `
       <label class="form-label">封面图</label>
-      <input type="file" class="form-control custom-border" accept="image/*" />
+      <div class="d-flex align-items-center gap-2">
+        <input
+          type="file"
+          class="form-control form-control-sm custom-border"
+          accept="image/*"
+        />
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-sm blue-border flex-shrink-0"
+          id="btn-random-cover"
+        >
+          从插图中选一张
+        </button>
+      </div>
       <div class="mt-2" id="cover-preview"></div>
     `;
     const coverInput = gCover.querySelector('input[type="file"]');
     const coverPreview = gCover.querySelector("#cover-preview");
+    const btnRandomCover = gCover.querySelector("#btn-random-cover");
     left.appendChild(gCover);
+    
+    // 绑定“从插图中选一张”按钮
+    if (btnRandomCover) {
+      btnRandomCover.addEventListener("click", () => {
+        pickRandomCoverFromImages();
+      });
+    }
 
     async function handleCoverChange(file) {
       if (!file) return;
@@ -325,6 +365,243 @@ date: 2025-10-26 20:15:58
     const imgsInput = gImages.querySelector('input[type="file"]');
     const imagesWrap = gImages.querySelector("#images-wrap");
     left.appendChild(gImages);
+
+    async function addImageFromBlob(blob, originName) {
+      console.log("[contribute] addImageFromBlob called:", blob, originName);
+
+      if (!blob) {
+        console.warn("[contribute] addImageFromBlob: blob is null/undefined");
+        return null;
+      }
+
+      try {
+        const fileLike = blob; // File 或 Blob 都行
+        const displayName =
+          originName ||
+          (fileLike.name ? fileLike.name : "") ||
+          "image";
+
+        console.log(
+          "[contribute] blob info:",
+          "type =", fileLike.type,
+          "size =", fileLike.size,
+          "name =", fileLike.name
+        );
+
+        const options = {
+          maxWidthOrHeight: 1280,
+          useWebWorker: true,
+          initialQuality: 0.8,
+          fileType: "image/webp",
+        };
+        console.log("[contribute] imageCompression options =", options);
+
+        const compressedFile = await imageCompression(fileLike, options);
+        console.log(
+          "[contribute] compressedFile:",
+          "type =", compressedFile.type,
+          "size =", compressedFile.size
+        );
+
+        const base64 = await imageCompression.getDataUrlFromFile(compressedFile);
+        const base64Data = base64.split(",")[1];
+
+        // 用序号命名 1.webp / 2.webp ...
+        const fileIndex = state.images.length + 1;
+        const fileName = `${fileIndex}.webp`;
+
+        const imgObj = { name: fileName, base64: base64Data };
+        state.images.push(imgObj);
+        state.images.sort((a, b) => parseInt(a.name) - parseInt(b.name));
+        renderImages();
+        console.log("[contribute] state.images length =", state.images.length);
+
+        const safeTitle = sanitizeTitle(state.title);
+        const path = `../photos/${safeTitle}/${fileName}`;
+
+        // alt = 去掉扩展名后的原始文件名（自动图注）
+        const alt = displayName.replace(/\.[^.]+$/, "") || "请输入图注";
+
+        return { url: path, alt, fileName };
+      } catch (err) {
+        console.error("[contribute] addImageFromBlob error:", err);
+        showToast("自动处理图片失败，请重试或手动上传。", "error");
+        return null;
+      }
+    }
+
+    // --- 处理 docx 上传：用 mammoth 转 HTML + 把 data:image 的 <img> 全部“落盘”为 webp ---
+    async function handleDocxUpload(file) {
+      console.log("[contribute] handleDocxUpload:", file);
+
+      if (!file) return;
+
+      // 你这边 type 是 application/wps-office.docx，这里只按后缀判断
+      if (!/\.docx$/i.test(file.name)) {
+        showToast("目前只支持 .docx 文件", "error");
+        return;
+      }
+      if (typeof mammoth === "undefined") {
+        console.error("[contribute] mammoth.js not loaded");
+        showToast("缺少 mammoth.js，无法解析 Word 文档", "error");
+        return;
+      }
+      if (!state.editor) {
+        showToast("编辑器尚未初始化", "error");
+        return;
+      }
+
+      showToast("正在解析 Word 文档，请稍候...", "info");
+
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+
+        // 不自定义 convertImage，先让 mammoth 生成 data:image;base64 的 <img>
+        const result = await mammoth.convertToHtml({ arrayBuffer });
+        const html = result.value || "";
+        console.log("[contribute] mammoth HTML (raw):", html);
+        console.log("[contribute] mammoth messages:", result.messages);
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const imgEls = Array.from(doc.querySelectorAll("img"));
+        console.log("[contribute] found <img> count:", imgEls.length);
+
+        let imgIndex = 0;
+
+        for (const img of imgEls) {
+          const src = img.getAttribute("src") || "";
+          if (!src.startsWith("data:")) {
+            console.log("[contribute] img is not data url, skip:", src);
+            continue;
+          }
+
+          const m = src.match(/^data:(.*?);base64,(.*)$/);
+          if (!m) {
+            console.warn("[contribute] invalid data url, skip");
+            continue;
+          }
+          const contentType = m[1] || "image/png";
+          const base64Data = m[2];
+
+          console.log(
+            "[contribute] processing data image:",
+            "contentType =", contentType,
+            "length =", base64Data.length
+          );
+
+          // base64 -> Blob
+          const byteString = atob(base64Data);
+          const len = byteString.length;
+          const u8arr = new Uint8Array(len);
+          for (let i = 0; i < len; i++) {
+            u8arr[i] = byteString.charCodeAt(i);
+          }
+          const blob = new Blob([u8arr], { type: contentType });
+
+          imgIndex += 1;
+          const fakeName =
+            file.name.replace(/\.[^.]+$/, "") + "_image" + imgIndex + ".png";
+
+          const imgResult = await addImageFromBlob(blob, fakeName);
+          if (imgResult && imgResult.url) {
+              console.log(
+                "[contribute] data image converted ->",
+                imgResult.url
+              );
+              img.setAttribute("src", imgResult.url);
+
+              img.setAttribute("alt", "");
+            } else {
+              console.warn("[contribute] failed to convert data image");
+            }
+        }
+
+        const finalHtml = doc.body.innerHTML;
+        console.log("[contribute] finalHtml:", finalHtml);
+
+        state.editor.setHTML(finalHtml);
+        showToast("Word 内容已导入编辑器（图片已处理）", "success");
+      } catch (err) {
+        console.error("[contribute] handleDocxUpload error:", err);
+        showToast("解析 Word 文档失败，请检查文件是否为有效的 .docx", "error");
+      }
+    }
+
+    // 读取一张 webp base64 图片的尺寸
+    function getImageSizeFromBase64(imgObj) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve({ width: img.width, height: img.height });
+        img.onerror = (e) => reject(e);
+        img.src = `data:image/webp;base64,${imgObj.base64}`;
+      });
+    }
+    
+    // 从 state.images 里挑一张适合作为封面的图，然后设为封面
+    async function pickRandomCoverFromImages() {
+      if (!state.images.length) {
+        showToast("当前还没有文章插图，无法自动选择封面。", "error");
+        return;
+      }
+    
+      try {
+        const targetRatio = 465 / 275; // 大约 1.69，接近你期望的封面比例
+    
+        // 先把每张图片的尺寸都读出来
+        const sizeInfos = await Promise.all(
+          state.images.map(async (imgObj) => {
+            try {
+              const { width, height } = await getImageSizeFromBase64(imgObj);
+              return { imgObj, width, height };
+            } catch (e) {
+              console.warn("[contribute] getImageSizeFromBase64 error", e);
+              return null;
+            }
+          })
+        );
+    
+        const valid = sizeInfos.filter(Boolean);
+        if (!valid.length) {
+          showToast("无法读取插图尺寸，已随机选择一张。", "info");
+          const any = state.images[Math.floor(Math.random() * state.images.length)];
+          state.cover = { name: "cover.webp", base64: any.base64 };
+          renderCover();
+          return;
+        }
+    
+        // 先挑出大致横图，并按比例接近度打一个简单分
+        const candidates = [];
+        valid.forEach(({ imgObj, width, height }) => {
+          if (!width || !height) return;
+          const ratio = width / height;
+          // 只要是横图，大致 1.3~2.0 之间就认为“适合做封面”
+          if (ratio > 1.3 && ratio < 2.0) {
+            const ratioScore = Math.abs(ratio - targetRatio);
+            candidates.push({ imgObj, ratioScore });
+          }
+        });
+    
+        let chosen;
+        if (candidates.length) {
+          // 取前几张最接近目标比例的，然后从中随机一张
+          candidates.sort((a, b) => a.ratioScore - b.ratioScore);
+          const top = candidates.slice(0, Math.min(5, candidates.length));
+          chosen = top[Math.floor(Math.random() * top.length)].imgObj;
+        } else {
+          // 如果没有“像样的横图”，就从全部里随机一张
+          chosen = state.images[Math.floor(Math.random() * state.images.length)];
+        }
+    
+        // 直接复用压过的 base64 当封面，不再重复压缩
+        state.cover = { name: "cover.webp", base64: chosen.base64 };
+        renderCover();
+        showToast("已从插图中选了一张作为封面", "success");
+      } catch (err) {
+        console.error("[contribute] pickRandomCoverFromImages error:", err);
+        showToast("自动选择封面失败，请手动上传或稍后再试。", "error");
+      }
+    }
 
     async function handleImagesChange(files) {
       if (!files || !files.length) return;
@@ -566,7 +843,37 @@ date: 2025-10-26 20:15:58
       initialEditType: "markdown",
       previewStyle: "vertical",
       initialValue: "# 请输入正文",
-      theme: "dark"
+      theme: "dark",
+      hooks: {
+        /**
+         * blob: 从粘贴 / 拖拽 / 工具栏上传得到的 File/Blob
+         * callback(url, altText): 告诉 Editor 在光标处插入这张图片
+         */
+        addImageBlobHook: async (blob, callback) => {
+          console.log(
+            "[contribute] addImageBlobHook triggered, blob =",
+            blob,
+            "name =", blob && blob.name
+          );
+
+          showToast("正在处理图片...", "info");
+
+          // 把原始文件名传进去，里面会用它来生成 alt
+          const result = await addImageFromBlob(blob, blob && blob.name);
+
+          if (result && result.url) {
+            console.log("[contribute] addImageBlobHook: image ready:", result);
+            callback(result.url, result.alt);
+            showToast("图片已添加到正文", "success");
+          } else {
+            console.warn("[contribute] addImageBlobHook: no result");
+            showToast("图片处理失败", "error");
+          }
+
+          // 阻止 ToastUI 的默认上传行为（防止它自己再搞一次）
+          return false;
+        },
+      },
     });
 
     // 主题联动（跟随 <html data-theme="...">）
