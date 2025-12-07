@@ -167,3 +167,6 @@ additional_injections:
     <script type="module" src="/utils/random-post-cover.js"></script>
     <script src="/effects/cursor-effects.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/qidiankepukehuan/live2d-models@1.0.3/dist/autoload.js"></script>
+    <link rel="preconnect" href="https://uicdn.toast.com" />
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>

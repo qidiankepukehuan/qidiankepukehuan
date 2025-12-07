@@ -10,11 +10,6 @@ date: 2025-10-26 20:15:58
 
 <div id="app-contribute" class="contribute-page"></div>
 
-<!-- 依赖：不需要 React / Babel，仅保留编辑器与图片压缩 -->
-<link rel="preconnect" href="https://uicdn.toast.com" />
-<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
-
 <script>
 (function () {
   const backend_url = "https://contribute.qidian.space";
