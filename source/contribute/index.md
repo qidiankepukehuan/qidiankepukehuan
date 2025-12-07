@@ -290,18 +290,20 @@ date: 2025-10-26 20:15:58
     gCover.className = "mb-3";
     gCover.innerHTML = `
       <label class="form-label">封面图</label>
-      <div class="d-flex align-items-center gap-2">
-        <input
-          type="file"
-          class="form-control form-control-sm custom-border"
-          accept="image/*"
-        />
+      <div class="d-flex align-items-center">
+        <div class="flex-grow-1 me-2">
+          <input
+            type="file"
+            class="form-control custom-border w-100"
+            accept="image/*"
+          />
+        </div>
         <button
           type="button"
-          class="btn btn-outline-primary btn-sm blue-border flex-shrink-0"
+          class="btn btn-outline-primary blue-border px-3"
           id="btn-random-cover"
         >
-          从插图中选一张
+          自动选择封面
         </button>
       </div>
       <div class="mt-2" id="cover-preview"></div>
