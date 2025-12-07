@@ -51,17 +51,14 @@
 
     // 初始整页加载
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('[giscus] DOMContentLoaded -> loadComments');
         loadComments();
     });
 
     window.addEventListener('pjax:complete', () => {
-        console.log('[giscus] window pjax:complete -> loadComments');
         loadComments();
     });
 
     window.addEventListener('pjax:success', () => {
-        console.log('[giscus] window pjax:success -> loadComments');
         loadComments();
     });
 })();
