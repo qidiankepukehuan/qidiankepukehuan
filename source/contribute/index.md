@@ -692,7 +692,17 @@ date: 2025-10-26 20:15:58
             </ul>
         </div>
         <div>
-            <strong>二、图片处理与插入</strong>
+            <strong>二、从 Word 导入</strong>
+            <ul>
+                <li>目前仅支持 <code>.docx</code> 文件（包括 WPS 另存为 <code>.docx</code> 的文档）。</li>
+                <li>点击“从 Word 导入”后，系统会按照文档中的顺序导入文字和图片。</li>
+                <li>Word 中的图片会自动抽取、压缩并保存为 <code>WebP</code>，插入正文时会使用统一的图片路径。</li>
+                <li>导入时会自动清空图片标题/图注，请在编辑器中根据需要手动补充图注内容。</li>
+                <li>导入完成后，建议通读一遍正文，确认段落和图片位置是否符合预期。</li>
+            </ul>
+        </div>
+        <div>
+            <strong>三、图片处理与插入</strong>
             <ul>
                 <li>所有上传图片将自动转换为 <code>WebP</code> 格式。</li>
                 <li>推荐：上传后点击“插入”按钮将图片添加到编辑器（预览区不显示属正常，不影响发布）。</li>
@@ -700,7 +710,7 @@ date: 2025-10-26 20:15:58
             </ul>
         </div>
         <div>
-            <strong>三、投稿与后续</strong>
+            <strong>四、投稿与后续</strong>
             <ul>
                 <li>点击“投稿”后，系统需要约 <strong>20秒</strong> 进行处理，请耐心等待，切勿重复点击，以免造成重复提交。</li>
                 <li>投稿过程中如遇任何问题，请联系：<code>tsblydyzbjb@qidian.space</code></li>
