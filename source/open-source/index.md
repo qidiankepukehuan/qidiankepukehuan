@@ -81,6 +81,90 @@ date: 2025-10-26 20:15:58
       :host([data-theme="dark"]) .toast-info.info { background: rgba(13,110,253,.35); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
       :host([data-theme="dark"]) .toast-info.success { background: rgba(25,135,84,.55); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
       :host([data-theme="dark"]) .toast-info.error { background: rgba(220,53,69,.6); box-shadow: 0 4px 10px rgba(0,0,0,.6); }
+
+      .cloud-entry {
+        margin-top: 16px;
+      }
+
+      .cloud-entry-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        text-decoration: none;
+        color: inherit;
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cloud-entry-link:hover {
+        text-decoration: none;
+        color: inherit;
+        background: #fafafa;
+        border-color: #cfcfcf;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      .cloud-entry-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #444;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .cloud-entry-text {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .cloud-entry-title {
+        font-size: 0.98rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 2px;
+        color: #222;
+      }
+
+      .cloud-entry-desc {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #666;
+      }
+
+      :host([data-theme="dark"]) .cloud-entry-link {
+        background: #1e1e28;
+        border-color: #333;
+        color: #e0e0e0;
+      }
+
+      :host([data-theme="dark"]) .cloud-entry-link:hover {
+        background: #242430;
+        border-color: #444;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+      }
+
+      :host([data-theme="dark"]) .cloud-entry-icon {
+        background: #2a2a36;
+        border-color: #3a3a48;
+        color: #d8d8d8;
+      }
+
+      :host([data-theme="dark"]) .cloud-entry-title {
+        color: #f2f2f2;
+      }
+
+      :host([data-theme="dark"]) .cloud-entry-desc {
+        color: #b8c0cc;
+      }
     `;
 
     shadow.append(linkBootstrap, styleCustom);
@@ -141,6 +225,25 @@ date: 2025-10-26 20:15:58
           <input type="text" class="form-control custom-border" placeholder="验证码" />
           <button class="btn btn-outline-primary btn-sm blue-border" type="button">验证并发送到邮箱</button>
         </div>
+      </div>
+
+      <div class="cloud-entry">
+        <a
+          class="cloud-entry-link custom-border"
+          href="https://drive.google.com/drive/folders/1h1f8W8ldKNqgbRl7tyTQEoSHOt-oIMD-?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cloud-entry-icon" aria-hidden="true">
+            <svg t="1774158362932" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1641" width="24" height="24">
+              <path d="M928.853333 672L825.173333 853.333333a85.333333 85.333333 0 0 1-74.24 42.666667H358.4a21.333333 21.333333 0 0 1-17.066667-32L442.453333 682.666667a85.333333 85.333333 0 0 1 74.24-42.666667h393.813334a21.333333 21.333333 0 0 1 18.346666 32z m-492.373333-243.2L331.52 246.613333a20.906667 20.906667 0 0 0-36.693333 0L93.866667 597.333333a65.28 65.28 0 0 0-8.533334 32v9.386667a65.28 65.28 0 0 0 8.533334 32l107.946666 188.586667a21.76 21.76 0 0 0 37.12 0L436.48 512a85.333333 85.333333 0 0 0 0-83.2zM586.666667 512a85.333333 85.333333 0 0 0 73.813333 42.666667h208.64a21.333333 21.333333 0 0 0 18.773333-32L686.933333 170.666667a85.333333 85.333333 0 0 0-74.24-42.666667H404.053333a21.333333 21.333333 0 0 0-20.053333 32z" p-id="1642" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="cloud-entry-text">
+            <div class="cloud-entry-title">奇点科普科幻协会资料</div>
+            <div class="cloud-entry-desc">推荐优先使用云盘访问，减少服务器压力，获取更稳定。</div>
+          </div>
+        </a>
       </div>
     `;
     layout.appendChild(left);
