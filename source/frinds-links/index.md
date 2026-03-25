@@ -36,6 +36,30 @@ title: 友情链接
     </div>
   </a>
 
+  <a class="link-item" href="https://file770.com/?lang=en" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/file770.png" alt="">
+    <div class="link-info">
+      <div class="link-name">File 770</div>
+      <div class="link-descr">科幻、奇幻与漫画新闻</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://khyjzx.crsp.org.cn/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/中国科幻研究中心.png" alt="">
+    <div class="link-info">
+      <div class="link-name">中国科幻研究中心</div>
+      <div class="link-descr">中国科幻研究官方机构</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://locusmag.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/locus.jpg" alt="">
+    <div class="link-info">
+      <div class="link-name">Locus Magazine</div>
+      <div class="link-descr">美国权威科幻粉丝杂志</div>
+    </div>
+  </a>
+
   <a class="link-item" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMDgyMzg2NA==&scene=124#wechat_redirect" target="_blank">
     <img class="link-avatar" src="../photos/friend-links/42号邮局.png" alt="">
     <div class="link-info">
@@ -70,9 +94,9 @@ title: 友情链接
         gap: 20px;
         padding: 20px;
     }
-    
+
     .link-item {
-        min-width: 0;  
+        min-width: 0;
         display: flex;
         align-items: center;
         padding: 15px;
@@ -84,13 +108,13 @@ title: 友情链接
         border: 1px solid rgba(0, 0, 0, 0.05);
         gap: 10px;
     }
-    
+
     .link-item:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         background: rgba(255, 255, 255, 1);
     }
-    
+
     .link-avatar {
         width: 50px;
         height: 50px;
@@ -98,55 +122,55 @@ title: 友情链接
         object-fit: cover;
         margin-right: 0;
     }
-    
+
     .link-info {
         min-width: 0;
         flex: 1;
         overflow-wrap: anywhere;
     }
-    
+
     .link-name {
         font-weight: 600;
         font-size: 1.25rem;
         color: #333;
         margin-bottom: 4px;
     }
-    
+
     .link-descr {
         color: #666;
         font-size: 0.95rem;
         line-height: 1.4;
     }
-    
+
     /* 夜间模式样式 */
     html[data-theme="dark"] .link-item {
         background: rgba(30, 30, 40, 0.85);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
-    
+
     html[data-theme="dark"] .link-item:hover {
         background: rgba(40, 40, 50, 0.95);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-    
+
     html[data-theme="dark"] .link-name {
         color: #f0f0f0;
     }
-    
+
     html[data-theme="dark"] .link-descr {
         color: #aaa;
     }
-    
+
     .theme-toggle i {
         font-size: 24px;
         color: #333;
     }
-    
+
     html[data-theme="dark"] .theme-toggle i {
         color: #f0f0f0;
     }
-    
+
     /* 页面背景 */
     body {
         background: #f8f9fa;
@@ -155,7 +179,7 @@ title: 友情链接
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         transition: background 0.3s ease;
     }
-    
+
     html[data-theme="dark"] body {
         background: #121212;
     }
