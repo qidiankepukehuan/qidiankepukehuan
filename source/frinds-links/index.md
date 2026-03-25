@@ -36,11 +36,11 @@ title: 友情链接
     </div>
   </a>
 
-  <a class="link-item" href="https://file770.com/?lang=en" target="_blank">
-    <img class="link-avatar" src="../photos/friend-links/file770.png" alt="">
+  <a class="link-item" href="https://www.sfw.com.cn/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/科幻世界.png" alt="">
     <div class="link-info">
-      <div class="link-name">File 770</div>
-      <div class="link-descr">科幻、奇幻与漫画新闻</div>
+      <div class="link-name">科幻世界</div>
+      <div class="link-descr">中国最大的科幻杂志</div>
     </div>
   </a>
 
@@ -52,10 +52,18 @@ title: 友情链接
     </div>
   </a>
 
+  <a class="link-item" href="https://file770.com/?lang=en" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/file770.png" alt="">
+    <div class="link-info">
+      <div class="link-name">File 770</div>
+      <div class="link-descr">科幻、奇幻与漫画新闻</div>
+    </div>
+  </a>
+
   <a class="link-item" href="https://locusmag.com/" target="_blank">
     <img class="link-avatar" src="../photos/friend-links/locus.jpg" alt="">
     <div class="link-info">
-      <div class="link-name">Locus Magazine</div>
+      <div class="link-name">轨迹杂志</div>
       <div class="link-descr">美国权威科幻粉丝杂志</div>
     </div>
   </a>
@@ -81,6 +89,78 @@ title: 友情链接
     <div class="link-info">
       <div class="link-name">宇宙尽头和牛馆</div>
       <div class="link-descr">河流个人微信公众号</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://www.lightspeedmagazine.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/光速杂志.png" alt="">
+    <div class="link-info">
+      <div class="link-name">光速杂志</div>
+      <div class="link-descr">美国在线科幻奇幻杂志</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://strangehorizons.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/奇异视野.jpg" alt="">
+    <div class="link-info">
+      <div class="link-name">奇异视野</div>
+      <div class="link-descr">每周推理智幻杂志</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://www.uncannymagazine.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/离奇杂志.png" alt="">
+    <div class="link-info">
+      <div class="link-name">离奇杂志</div>
+      <div class="link-descr">科幻奇幻双月刊</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://reactormag.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/反应堆杂志.png" alt="">
+    <div class="link-info">
+      <div class="link-name">反应堆杂志</div>
+      <div class="link-descr">科幻奇幻流行文化资讯</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://www.scifinow.co.uk/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/scificnow.jpg" alt="">
+    <div class="link-info">
+      <div class="link-name">ScifiNow</div>
+      <div class="link-descr">科幻奇幻恐怖资讯网</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://sf-encyclopedia.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/SFE.png" alt="">
+    <div class="link-info">
+      <div class="link-name">SF百科</div>
+      <div class="link-descr">科幻百科全书第四版</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://asimovs.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/阿西莫夫科幻.png" alt="">
+    <div class="link-info">
+      <div class="link-name">阿西莫夫科幻</div>
+      <div class="link-descr">经典科幻杂志</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://scifistories.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/科幻故事.svg" alt="">
+    <div class="link-info">
+      <div class="link-name">科幻故事</div>
+      <div class="link-descr">科幻故事精选网</div>
+    </div>
+  </a>
+
+  <a class="link-item" href="https://www.sffworld.com/" target="_blank">
+    <img class="link-avatar" src="../photos/friend-links/科幻奇幻世界.jpg" alt="">
+    <div class="link-info">
+      <div class="link-name">科幻奇幻世界</div>
+      <div class="link-descr">SFFWorld 科幻奇幻社区</div>
     </div>
   </a>
 
