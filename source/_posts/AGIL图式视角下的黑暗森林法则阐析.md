@@ -2,6 +2,8 @@
 title: AGIL图式视角下的黑暗森林法则阐析
 author: 托马斯·维德[^1]
 date: 2026-03-17 00:00:00
+categories:
+- 引力波2
 tags:
   - 社论
 cover: cover.webp
