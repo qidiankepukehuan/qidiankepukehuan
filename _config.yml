@@ -110,9 +110,14 @@ plugin:
  - hexo-generator-sitemap
 
 feed:
- type: atom
- path: atom.xml
- limit: 20
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 20
 
 sitemap:
   path: sitemap.xml
