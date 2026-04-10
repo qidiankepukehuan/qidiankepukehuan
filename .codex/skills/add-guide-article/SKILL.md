@@ -43,7 +43,7 @@ cover: cover.webp
 3. 生成封面：
 
 ```bash
-./tools/generate-guide-cover.sh \
+./.codex/skills/add-guide-article/scripts/generate-guide-cover.sh \
   --title "如何做某件事" \
   --author "Mudern" \
   --output "source/_posts/如何做某件事/cover.webp"
@@ -52,7 +52,7 @@ cover: cover.webp
 - 标题过长时，直接调小字号：
 
 ```bash
-./tools/generate-guide-cover.sh \
+./.codex/skills/add-guide-article/scripts/generate-guide-cover.sh \
   --title "幻协生存指南第一版前言" \
   --title-pointsize 78 \
   --author "十口" \
@@ -62,7 +62,7 @@ cover: cover.webp
 - 如果想固定某个配色，可显式传：
 
 ```bash
-./tools/generate-guide-cover.sh \
+./.codex/skills/add-guide-article/scripts/generate-guide-cover.sh \
   --title "如何做外联" \
   --palette teal \
   --author "硫酸铜" \
@@ -88,7 +88,7 @@ pnpm run build
 
 ## 封面脚本
 
-- 脚本位置：`tools/generate-guide-cover.sh`
+- 脚本位置：`.codex/skills/add-guide-article/scripts/generate-guide-cover.sh`
 - 默认输出 1600x900 的 `webp`
 - 默认系列标签为 `幻协生存指南`
 - 默认会根据标题自动挑选配色，也可用 `--palette` 手动指定

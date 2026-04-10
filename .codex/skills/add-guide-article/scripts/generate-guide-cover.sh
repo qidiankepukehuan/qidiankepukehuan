@@ -5,7 +5,7 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  ./tools/generate-guide-cover.sh --title "如何做会刊？" --author "Mudern" --output "source/_posts/如何做会刊？/cover.webp"
+  ./.codex/skills/add-guide-article/scripts/generate-guide-cover.sh --title "如何做会刊？" --author "Mudern" --output "source/_posts/如何做会刊？/cover.webp"
 
 Options:
   --title    Required. Article title shown on the cover.
@@ -104,7 +104,7 @@ pick_palette() {
     selected="${palettes[$index]}"
   fi
 
-  IFS='|' read -r PALETTE_NAME BG_START BG_END BUBBLE_1 BUBBLE_2 BORDER_COLOR LABEL_COLOR AUTHOR_COLOR <<< "$selected"
+  IFS='|' read -r _ BG_START BG_END BUBBLE_1 BUBBLE_2 BORDER_COLOR LABEL_COLOR AUTHOR_COLOR <<< "$selected"
 }
 
 pick_palette "$PALETTE" "$TITLE"
