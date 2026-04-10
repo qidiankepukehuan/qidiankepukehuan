@@ -1,12 +1,11 @@
+---
+name: add-guide-article
+description: 用于在这个博客仓库里新增或更新“幻协生存指南”文章；适用于整理外部 Markdown 或 docx、统一文章 front matter、生成系列封面，并使用 pnpm 做构建验证。
+---
+
 # Add Guide Article
 
-用于往博客里新增或更新“幻协生存指南”系列文章。
-
-## 目标
-
-- 把外部 Markdown 或 docx 内容整理成博客可用的文章
-- 统一 front matter、分类、标签和封面资源
-- 用同一套脚本生成封面
+用于往这个博客里新增或更新“幻协生存指南”系列文章。
 
 ## 约定
 
@@ -50,7 +49,7 @@ cover: cover.webp
   --output "source/_posts/如何做某件事/cover.webp"
 ```
 
-- 如果标题过长，直接调小字号：
+- 标题过长时，直接调小字号：
 
 ```bash
 ./tools/generate-guide-cover.sh \
@@ -60,11 +59,21 @@ cover: cover.webp
   --output "source/_posts/幻协生存指南第一版前言/cover.webp"
 ```
 
+- 如果想固定某个配色，可显式传：
+
+```bash
+./tools/generate-guide-cover.sh \
+  --title "如何做外联" \
+  --palette teal \
+  --author "硫酸铜" \
+  --output "source/_posts/如何做外联/cover.webp"
+```
+
 4. 本地构建验证：
 
 ```bash
-npm run clean
-npm run build
+pnpm run clean
+pnpm run build
 ```
 
 ## 更新已有文章
@@ -82,16 +91,10 @@ npm run build
 - 脚本位置：`tools/generate-guide-cover.sh`
 - 默认输出 1600x900 的 `webp`
 - 默认系列标签为 `幻协生存指南`
+- 默认会根据标题自动挑选配色，也可用 `--palette` 手动指定
 - 长标题可通过 `--title-pointsize` 控制字号
-- 默认字体依赖系统字体：
+- 作者名会固定在左下角偏上一点的位置，避免太贴边
+- 默认字体依赖 ImageMagick 可识别的字体名：
   - `Source-Han-Sans-SC-Bold`
   - `Source-Han-Sans-SC-Medium`
   - `Source-Han-Sans-SC`
-- 如需替换字体，可通过环境变量覆盖：
-
-```bash
-TITLE_FONT="Noto-Sans-CJK-SC-Bold" \
-LABEL_FONT="Noto-Sans-CJK-SC-Medium" \
-AUTHOR_FONT="Noto-Sans-CJK-SC-Regular" \
-./tools/generate-guide-cover.sh --title "如何做某件事" --output "source/_posts/如何做某件事/cover.webp"
-```
