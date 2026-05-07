@@ -1,222 +1,198 @@
-class Circle {
-  constructor({ origin, speed, color, angle, context }) {
-    this.origin = origin
-    this.position = { ...this.origin }
-    this.color = color
-    this.speed = speed
-    this.angle = angle
-    this.context = context
-    this.renderCount = 0
-  }
+class CursorTrail {
+  constructor(options = {}) {
+    this.maxLength = options.maxLength || 40
+    this.color = options.color || 'rgba(255, 255, 255, 0.6)'
+    this.lineWidth = options.lineWidth || 2.5
+    this.fadeSpeed = options.fadeSpeed || 1.5
 
-  draw() {
-    this.context.fillStyle = this.color
-    this.context.beginPath()
-    this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)
-    this.context.fill()
-  }
+    this.points = []
+    this.canvas = null
+    this.ctx = null
+    this.running = false
+    this.boundAnimate = this.animate.bind(this)
 
-  move() {
-    this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x
-    this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)
-    this.renderCount++
-  }
-}
-
-class Boom {
-  constructor({ origin, context, circleCount = 10, area }) {
-    this.origin = origin
-    this.context = context
-    this.circleCount = circleCount
-    this.area = area
-    this.stop = false
-    this.circles = []
-  }
-
-  randomArray(range) {
-    const length = range.length
-    const randomIndex = Math.floor(length * Math.random())
-    return range[randomIndex]
-  }
-
-  randomColor() {
-    const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-    return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
-  }
-
-  randomRange(start, end) {
-    return (end - start) * Math.random() + start
+    this.init()
   }
 
   init() {
-    for (let i = 0; i < this.circleCount; i++) {
-      const circle = new Circle({
-        context: this.context,
-        origin: this.origin,
-        color: this.randomColor(),
-        angle: this.randomRange(Math.PI - 1, Math.PI + 1),
-        speed: this.randomRange(1, 6)
-      })
-      this.circles.push(circle)
-    }
-  }
+    this.canvas = document.createElement('canvas')
+    this.ctx = this.canvas.getContext('2d')
 
-  move() {
-    this.circles.forEach((circle, index) => {
-      if (circle.position.x > this.area.width || circle.position.y > this.area.height) {
-        return this.circles.splice(index, 1)
-      }
-      circle.move()
-    })
-    if (this.circles.length == 0) {
-      this.stop = true
-    }
-  }
+    const style = this.canvas.style
+    style.position = 'fixed'
+    style.top = '0'
+    style.left = '0'
+    style.width = '100%'
+    style.height = '100%'
+    style.pointerEvents = 'none'
+    style.zIndex = '2147483647'
 
-  draw() {
-    this.circles.forEach(circle => circle.draw())
-  }
-}
+    this.resize()
+    document.body.appendChild(this.canvas)
 
-// ===== 新的 Trail 类（直接替换原 Trail 类） =====
-class Trail {
-  constructor({ context, maxTail = 80, color = 'rgba(255,255,255,0.5)' }) {
-    this.context   = context
-    this.maxTail   = maxTail        // 最大轨迹长度
-    this.color     = color
-    this.history   = []             // 存点
-    this.currTail  = 0              // 当前允许的长度（动态衰减）
-  }
-
-  /* 压入新点 */
-  push(x, y) {
-    this.history.push({ x, y })
-    // 每移动就“补满”长度
-    this.currTail = this.maxTail
-  }
-
-  /* 每帧让长度自然衰减（可调整衰减速度） */
-  update() {
-    // 1px/帧 的衰减速度，可自行改成 0.5 或 2
-    this.currTail = Math.max(0, this.currTail - 2)
-  }
-
-  /* 绘制 */
-  draw() {
-    this.update()           // 先衰减
-    if (this.currTail <= 0 || this.history.length < 2) {
-      this.history = []     // 彻底消失时清空点列
-      return
-    }
-
-    // 从最新点往前回溯，直到总长度 <= currTail
-    let total = 0
-    const pts = [this.history[this.history.length - 1]]
-    for (let i = this.history.length - 2; i >= 0; i--) {
-      const dx = pts[pts.length - 1].x - this.history[i].x
-      const dy = pts[pts.length - 1].y - this.history[i].y
-      total += Math.hypot(dx, dy)
-      pts.push(this.history[i])
-      if (total >= this.currTail) break
-    }
-    pts.reverse()
-
-    // 绘制
-    const ctx = this.context
-    ctx.save()
-    ctx.strokeStyle = this.color
-    ctx.lineWidth   = 2.5
-    ctx.lineCap     = 'round'
-    ctx.beginPath()
-    ctx.moveTo(pts[0].x, pts[0].y)
-    for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y)
-    ctx.stroke()
-    ctx.restore()
-  }
-}
-
-class CursorSpecialEffects {
-  constructor() {
-    this.computerCanvas = document.createElement('canvas')
-    this.renderCanvas = document.createElement('canvas')
-
-    this.computerContext = this.computerCanvas.getContext('2d')
-    this.renderContext = this.renderCanvas.getContext('2d')
-
-    this.globalWidth = window.innerWidth
-    this.globalHeight = window.innerHeight
-
-    this.booms = []
-    this.running = false
-
-    this.trail = new Trail({ context: this.computerContext })
-  }
-
-  handleMouseDown(e) {
-    const boom = new Boom({
-      origin: { x: e.clientX, y: e.clientY },
-      context: this.computerContext,
-      area: {
-        width: this.globalWidth,
-        height: this.globalHeight
-      }
-    })
-    boom.init()
-    this.booms.push(boom)
-    this.running || this.run()
+    window.addEventListener('mousemove', this.handleMouseMove.bind(this))
+    window.addEventListener('click', this.handleClick.bind(this))
+    window.addEventListener('resize', this.resize.bind(this))
+    window.addEventListener('pagehide', this.destroy.bind(this))
+    window.addEventListener('mouseleave', this.clear.bind(this))
   }
 
   handleMouseMove(e) {
-    this.trail.push(e.clientX, e.clientY)
+    this.points.push({ x: e.clientX, y: e.clientY, alpha: 1 })
+    if (this.points.length > this.maxLength) {
+      this.points.shift()
+    }
+    if (!this.running) {
+      this.running = true
+      requestAnimationFrame(this.boundAnimate)
+    }
   }
 
-  handlePageHide() {
-    this.booms = []
-    this.trail.points = []
-    this.running = false
+  handleClick(e) {
+    BurstParticle.create(this.ctx, e.clientX, e.clientY)
+    if (!this.running) {
+      this.running = true
+      requestAnimationFrame(this.boundAnimate)
+    }
   }
 
-  init() {
-    const style = this.renderCanvas.style
-    style.position = 'fixed'
-    style.top = style.left = 0
-    style.zIndex = '999999999999999999999999999999999999999999'
-    style.pointerEvents = 'none'
-
-    style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
-    style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
-
-    document.body.append(this.renderCanvas)
-
-    window.addEventListener('mousedown', this.handleMouseDown.bind(this))
-    window.addEventListener('mousemove', this.handleMouseMove.bind(this))
-    window.addEventListener('pagehide', this.handlePageHide.bind(this))
+  resize() {
+    this.canvas.width = window.innerWidth
+    this.canvas.height = window.innerHeight
   }
 
-  run() {
-    this.running = true
-    if (this.booms.length === 0 && this.trail.history.length === 0) {
-      this.running = false
-      return
+  clear() {
+    this.points = []
+  }
+
+  animate() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+
+    // fade trail points
+    for (let i = 0; i < this.points.length; i++) {
+      this.points[i].alpha -= this.fadeSpeed / this.maxLength
+    }
+    while (this.points.length > 0 && this.points[0].alpha <= 0) {
+      this.points.shift()
     }
 
-    requestAnimationFrame(this.run.bind(this))
+    // draw trail
+    if (this.points.length >= 2) {
+      this.ctx.save()
+      this.ctx.strokeStyle = this.color
+      this.ctx.lineWidth = this.lineWidth
+      this.ctx.lineCap = 'round'
+      this.ctx.lineJoin = 'round'
 
-    this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
-    this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
-
-    this.trail.draw()
-
-    this.booms.forEach((boom, index) => {
-      if (boom.stop) {
-        return this.booms.splice(index, 1)
+      for (let i = 1; i < this.points.length; i++) {
+        const p0 = this.points[i - 1]
+        const p1 = this.points[i]
+        this.ctx.globalAlpha = Math.max(0, p1.alpha)
+        this.ctx.beginPath()
+        this.ctx.moveTo(p0.x, p0.y)
+        this.ctx.lineTo(p1.x, p1.y)
+        this.ctx.stroke()
       }
-      boom.move()
-      boom.draw()
-    })
-    this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+      this.ctx.restore()
+    }
+
+    // update and draw particles
+    BurstParticle.updateAll()
+    BurstParticle.drawAll(this.ctx)
+
+    if (BurstParticle.hasActive() || this.points.length > 0) {
+      requestAnimationFrame(this.boundAnimate)
+    } else {
+      this.running = false
+    }
+  }
+
+  destroy() {
+    this.running = false
+    if (this.canvas && this.canvas.parentNode) {
+      this.canvas.parentNode.removeChild(this.canvas)
+    }
   }
 }
 
-const cursorSpecialEffects = new CursorSpecialEffects()
-cursorSpecialEffects.init()
+// ========== Burst Particles ==========
+class BurstParticle {
+  static pool = []
+  static colors = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+
+  constructor(x, y, vx, vy, color, size) {
+    this.x = x
+    this.y = y
+    this.vx = vx
+    this.vy = vy
+    this.color = color
+    this.size = size
+    this.alpha = 1
+    this.decay = 0.02 + Math.random() * 0.02
+    this.dead = false
+  }
+
+  static randomColor() {
+    return '#' + this.colors[Math.floor(Math.random() * this.colors.length)]
+      + this.colors[Math.floor(Math.random() * this.colors.length)]
+      + this.colors[Math.floor(Math.random() * this.colors.length)]
+      + this.colors[Math.floor(Math.random() * this.colors.length)]
+      + this.colors[Math.floor(Math.random() * this.colors.length)]
+      + this.colors[Math.floor(Math.random() * this.colors.length)]
+  }
+
+  static create(ctx, x, y) {
+    const count = 12
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5
+      const speed = 2 + Math.random() * 4
+      const vx = Math.cos(angle) * speed
+      const vy = Math.sin(angle) * speed
+      const color = this.randomColor()
+      const size = 2 + Math.random() * 2
+      this.pool.push(new BurstParticle(x, y, vx, vy, color, size))
+    }
+  }
+
+  update() {
+    this.x += this.vx
+    this.y += this.vy
+    this.vy += 0.1  // gravity
+    this.vx *= 0.98
+    this.alpha -= this.decay
+    if (this.alpha <= 0) this.dead = true
+  }
+
+  draw(ctx) {
+    ctx.save()
+    ctx.globalAlpha = this.alpha
+    ctx.fillStyle = this.color
+    ctx.beginPath()
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+    ctx.fill()
+    ctx.restore()
+  }
+
+  static updateAll() {
+    for (let i = this.pool.length - 1; i >= 0; i--) {
+      this.pool[i].update()
+      if (this.pool[i].dead) this.pool.splice(i, 1)
+    }
+  }
+
+  static drawAll(ctx) {
+    for (const p of this.pool) p.draw(ctx)
+  }
+
+  static hasActive() {
+    return this.pool.length > 0
+  }
+}
+
+// Initialize
+const cursorTrail = new CursorTrail({
+  maxLength: 40,
+  color: 'rgba(255, 255, 255, 0.7)',
+  lineWidth: 2.5,
+  fadeSpeed: 1.5,
+})
