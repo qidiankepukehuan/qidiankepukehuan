@@ -44,7 +44,7 @@ https://code.visualstudio.com/
    ```
 3. 启动本地预览
    ```bash
-   hexo clean && Hexo g  #清理，生成静态文件
+   hexo clean && hexo g  #清理，生成静态文件
    hexo server  #浏览器访问 http://localhost:4000
    ```
 ## ✍️ 写作 & 发布
